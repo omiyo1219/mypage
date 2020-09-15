@@ -14,13 +14,21 @@
         ></v-img>
       </template>
       <v-row align="center">
-        <v-toolbar-title>Portfolio</v-toolbar-title>
+        <v-toolbar-title class="hidden-sm-and-down ml-3">Profile</v-toolbar-title>
         <v-spacer></v-spacer>
-        <v-row justify="end">
-          <v-btn text width="145px">About</v-btn>
-          <v-btn text width="145px">Skill</v-btn>
-          <v-btn text width="145px">Work</v-btn>
-          <v-btn text width="145px">Contact</v-btn>
+        <v-row>
+          <v-col cols="3" sm="2" md="3" lg="3" xl="3">
+            <v-btn text>About</v-btn>
+          </v-col>
+          <v-col cols="3" sm="2" md="3" lg="3" xl="3">
+            <v-btn text>Skill</v-btn>
+          </v-col>
+          <v-col cols="3" sm="2" md="3" lg="3" xl="3">
+            <v-btn text>Work</v-btn>
+          </v-col>
+          <v-col cols="3" sm="2" md="3" lg="3" xl="3">
+            <v-btn text>Contact</v-btn>
+          </v-col>
         </v-row>
       </v-row>
     </v-app-bar>
