@@ -18,16 +18,16 @@
         <v-spacer></v-spacer>
         <v-row>
           <v-col cols="3" sm="2" md="3" lg="3" xl="3">
-            <v-btn text>About</v-btn>
+            <v-btn class="topMenu" text>About</v-btn>
           </v-col>
           <v-col cols="3" sm="2" md="3" lg="3" xl="3">
-            <v-btn text>Skill</v-btn>
+            <v-btn class="topMenu" text>Work</v-btn>
           </v-col>
           <v-col cols="3" sm="2" md="3" lg="3" xl="3">
-            <v-btn text>Work</v-btn>
+            <v-btn class="topMenu" text>Skill</v-btn>
           </v-col>
           <v-col cols="3" sm="2" md="3" lg="3" xl="3">
-            <v-btn text>Contact</v-btn>
+            <v-btn class="topMenu" text>Contact</v-btn>
           </v-col>
         </v-row>
       </v-row>
@@ -46,8 +46,8 @@ export default {
 </script>
 
 <style scoped>
-.topbarBtn:hover {
-  background-color:#00ff00;
+.topMenu {
+  font-size: 0.9em;
 }
 
 </style>
