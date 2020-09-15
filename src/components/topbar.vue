@@ -1,0 +1,45 @@
+<template>
+  <v-app style="max-height:40px">
+    <v-app-bar
+      fixed
+      color="#fcb69f"
+      dark
+      :elevation="8"
+      src="https://picsum.photos/1920/1080?random"
+    >
+      <template v-slot:img="{ props }">
+        <v-img
+          v-bind="props"
+          gradient="to top right, rgba(19,84,122,.5), rgba(128,208,199,0.9)"
+        ></v-img>
+      </template>
+      <v-row align="center">
+        <v-toolbar-title>Portfolio</v-toolbar-title>
+        <v-spacer></v-spacer>
+        <v-row justify="end">
+          <v-btn text width="145px">About</v-btn>
+          <v-btn text width="145px">Skill</v-btn>
+          <v-btn text width="145px">Work</v-btn>
+          <v-btn text width="145px">Contact</v-btn>
+        </v-row>
+      </v-row>
+    </v-app-bar>
+  </v-app>
+</template>
+
+<script>
+export default {
+  name: 'Home',
+  data () {
+    return {
+    }
+  }
+}
+</script>
+
+<style scoped>
+.topbarBtn:hover {
+  background-color:#00ff00;
+}
+
+</style>

@@ -1,14 +1,23 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <v-btn></v-btn>
-    <router-view/>
-  </div>
+  <v-app>
+    <div class="container">
+      <topbar></topbar>
+      <dropDownMatrix></dropDownMatrix>
+      <router-view/>
+    </div>
+  </v-app>
 </template>
 
 <script>
+import topbar from "./components/topbar"
+import dropDownMatrix from "./components/dropdownMatrix"
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    topbar,
+    dropDownMatrix
+  },
 }
 </script>
 
@@ -17,8 +26,11 @@ export default {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+
+.container {
+  position: relative;
+  z-index: 0;
 }
 </style>
