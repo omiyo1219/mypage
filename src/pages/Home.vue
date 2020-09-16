@@ -1,7 +1,6 @@
 <template>
   <v-container fluid>
     <v-row
-      class="topContentsStyle"
       align="center"
       justify="center"
       :style="{height:screenSize['topContentsHeight'] + 'px'}"
@@ -11,17 +10,15 @@
       </v-col>
     </v-row>
     <v-row
-      class="topContentsStyle"
       justify="center"
     >
       <v-col cols="12">
         <aboutContents :height="screenSize['otherContentsHeight']"></aboutContents>
       </v-col>
     </v-row>
+    
     <v-row
-      class="topContentsStyle"
       justify="center"
-      :style="{height:screenSize['otherContentsHeight'] + 'px'}"
     >
       <v-col cols="12">
         <workContents></workContents>
@@ -71,5 +68,7 @@ export default {
 </script>
 
 <style scoped>
-
+.contentsStyle {
+  position: relative;
+}
 </style>

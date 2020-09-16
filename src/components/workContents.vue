@@ -1,26 +1,38 @@
 <template>
-  <div  class="workContents">
-    <transition name="textSlide">
-      <div class="workTitleStyle" v-show="showData['showWorkTitle']">
-        Work
-      </div>
-    </transition>
-    <transition name="slide">
-      <img v-show="showData['showArrow']" class="setArrowPos" :src="arrowImage">
-    </transition><br>
-  </div>
+  <v-app>
+    <div>
+      <transition name="textSlide">
+        <span class="workTitleStyle" v-show="showData['showworkTitle']">
+          Work
+        </span>
+      </transition>
+      <transition name="slide">
+        <img v-show="showData['showArrow']" class="setArrowPos" :src="imageData['arrowImage']">
+      </transition>
+    </div>
+    <v-row class="mainBody" align="center" no-gutters>
+    </v-row>
+  </v-app>
 </template>
 
 <script>
 
 export default {
   name: 'workContents',
+  props: {
+    height: {
+      type: Number,
+    }
+  },
   data () {
     return {
-      arrowImage:require("@/assets/fullWidthArrow.svg"),
+      imageData: {
+        arrowImage:require("@/assets/fullWidthArrow.svg"),
+        profileImage: require("@/assets/myImage.svg"),
+      },
       showData: {
         showArrow: false,
-        showWorkTitle: false
+        showworkTitle: false
       }
     }
   },
@@ -33,19 +45,17 @@ export default {
       this.showData['showArrow'] = true;
     },
     slideName() {
-      this.showData['showWorkTitle'] = true;
+      this.showData['showworkTitle'] = true;
     }
   }
 }
 </script>
 
 <style scoped>
-.workContents {
-  height: 85px;
-}
 
 .workTitleStyle {
-  float: right;
+  position: absolute;
+  right:0;
   font-size: 3.2vw;
   font-style: oblique;
   font-weight: 1000;
@@ -62,6 +72,14 @@ export default {
   margin-top: 2.5%;
 }
 
+.mainBody {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  margin-top: 8%;
+}
+
 .slide-enter-active, .slide-leave-active {
   transition: transform .6s
 }
@@ -73,7 +91,6 @@ export default {
   transition: transform .28s
 }
 .textSlide-enter {
-  opacity: 0;
   transform: translateX(-150px)
 }
 

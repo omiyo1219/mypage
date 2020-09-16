@@ -1,13 +1,15 @@
 <template>
-  <div class="workContents" :style="{height:height + 'px'}">
-    <transition name="textSlide">
-      <div class="workTitleStyle" v-show="showData['showAboutTitle']">
-        About
-      </div>
-    </transition>
-    <transition name="slide">
-      <img v-show="showData['showArrow']" class="setArrowPos" :src="imageData['arrowImage']">
-    </transition>
+  <v-app>
+    <div>
+      <transition name="textSlide">
+        <span class="aboutTitleStyle" v-show="showData['showAboutTitle']">
+          About
+        </span>
+      </transition>
+      <transition name="slide">
+        <img v-show="showData['showArrow']" class="setArrowPos" :src="imageData['arrowImage']">
+      </transition>
+    </div>
     <v-row class="mainBody" align="center" no-gutters>
       <v-col
         cols="12"
@@ -23,7 +25,7 @@
           height="95%"
         ></v-img>
       </v-col>
-      <v-col cols="1"></v-col>
+      <v-col cols="1" class="hidden-sm-and-down"></v-col>
       <v-col
         cols="12"
         sm="12"
@@ -43,7 +45,7 @@
         </span>
       </v-col>
     </v-row>
-  </div>
+  </v-app>
 </template>
 
 <script>
@@ -83,13 +85,10 @@ export default {
 </script>
 
 <style scoped>
-.workContents {
-  position: relative;
-  height: 85px;
-}
 
-.workTitleStyle {
-  float: right;
+.aboutTitleStyle {
+  position: absolute;
+  right:0;
   font-size: 3.2vw;
   font-style: oblique;
   font-weight: 1000;
@@ -107,11 +106,11 @@ export default {
 }
 
 .mainBody {
-  position: absolute;
+  position: relative;
   width: 100%;
   height: 100%;
   z-index: 5;
-  margin-top: 6%;
+  margin-top: 8%;
 }
 
 .slide-enter-active, .slide-leave-active {
@@ -125,7 +124,6 @@ export default {
   transition: transform .28s
 }
 .textSlide-enter {
-  opacity: 0;
   transform: translateX(-150px)
 }
 
