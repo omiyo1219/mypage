@@ -11,22 +11,22 @@
         <v-toolbar-title class="hidden-sm-and-down ml-3">PORTFOLIO</v-toolbar-title>
         <v-spacer></v-spacer>
         <v-row>
-          <v-col cols="3" sm="2" md="3" lg="3" xl="3">
+          <v-col cols="3" sm="3" md="3" lg="3" xl="3">
             <v-btn class="topMenu" text>
               <span style="color:#FCF503">A</span>bout
             </v-btn>
           </v-col>
-          <v-col cols="3" sm="2" md="3" lg="3" xl="3">
+          <v-col cols="3" sm="3" md="3" lg="3" xl="3">
             <v-btn class="topMenu" text>
               <span style="color:#FCF503">W</span>ork
             </v-btn>
           </v-col>
-          <v-col cols="3" sm="2" md="3" lg="3" xl="3">
+          <v-col cols="3" sm="3" md="3" lg="3" xl="3">
             <v-btn class="topMenu" text>
               <span style="color:#FCF503">S</span>kill
             </v-btn>
           </v-col>
-          <v-col cols="3" sm="2" md="3" lg="3" xl="3">
+          <v-col cols="3" sm="3" md="3" lg="3" xl="3">
             <v-btn class="topMenu" text>
               <span style="color:#FCF503">C</span>ontact
             </v-btn>
