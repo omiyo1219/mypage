@@ -8,7 +8,7 @@
     <transition name="slide">
       <img v-show="showData['showArrow']" class="setArrowPos" :src="imageData['arrowImage']">
     </transition>
-    <v-row class="mainBody" align="center">
+    <v-row class="mainBody" align="center" no-gutters>
       <v-col
         cols="12"
         sm="12"
@@ -19,15 +19,18 @@
       >
         <v-img
           :src="imageData['profileImage']"
+          width="95%"
+          height="95%"
         ></v-img>
       </v-col>
+      <v-col cols="1"></v-col>
       <v-col
         cols="12"
         sm="12"
         md="5"
         lg="5"
         xl="5"
-        style="font-size:2.0vw; color:gray"
+        style="font-size:2.0vw; color:gray;"
       >
         <span>
           岡田　尋嗣<br><br>
