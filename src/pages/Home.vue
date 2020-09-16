@@ -54,16 +54,16 @@ export default {
   },
   mounted() {
     window.addEventListener('resize', this.handleResize)
-    this.screenSize['topContentsHeight'] = window.innerHeight - 50
-    this.screenSize['otherContentsHeight'] = window.innerHeight
+    this.screenSize['topContentsHeight'] = screen.height - 50
+    this.screenSize['otherContentsHeight'] = screen.height
   },
   beforeDestroy: function(){
     window.removeEventListener('resize', this.handleResize)
   },
   methods: {
     handleResize() {
-      this.screenSize['topContentsHeight'] = window.innerHeight - 50
-      this.screenSize['otherContentsHeight'] = window.innerHeight
+      this.screenSize['topContentsHeight'] = screen.height - 50
+      this.screenSize['otherContentsHeight'] = screen.height
     }
   }
 }

@@ -15,12 +15,10 @@
         md="5"
         lg="5"
         xl="5"
-        class="profileImageStyle"
+        class="ml-3 mr-3"
       >
-        <v-img 
+        <v-img
           :src="imageData['profileImage']"
-          max-height="90%"
-          max-width="90%"
         ></v-img>
       </v-col>
       <v-col
@@ -111,11 +109,6 @@ export default {
   height: 100%;
   z-index: 5;
   margin-top: 6%;
-}
-
-.profileImageStyle {
- margin-left:5%;
- margin-right:5%;
 }
 
 .slide-enter-active, .slide-leave-active {
