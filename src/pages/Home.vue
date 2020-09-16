@@ -1,21 +1,70 @@
 <template>
-  <div>
-    <v-container style="background-color:#00ff00">
-      <contactForm></contactForm>
-    </v-container>
-  </div>
+  <v-container fluid>
+    <v-row
+      class="topContentsStyle"
+      align="center"
+      justify="center"
+      :style="{height:screenSize['topContentsHeight'] + 'px'}"
+    >
+      <v-col cols="12">
+        <topContents></topContents>
+      </v-col>
+    </v-row>
+    <v-row
+      class="topContentsStyle"
+      justify="center"
+      :style="{height:screenSize['otherContentsHeight'] + 'px'}"
+    >
+      <v-col cols="12">
+        <aboutContents></aboutContents>
+      </v-col>
+    </v-row>
+    <v-row
+      class="topContentsStyle"
+      justify="center"
+      :style="{height:screenSize['otherContentsHeight'] + 'px'}"
+    >
+      <v-col cols="12">
+        <workContents></workContents>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
-import contactForm from "../components/contactForm"
+import topContents from "../components/topContents"
+import aboutContents from "../components/aboutContents"
+import workContents from "../components/workContents"
+import contactContents from "../components/contactContents"
 
 export default {
   name: 'Home',
   components: {
-    contactForm,
+    topContents,
+    aboutContents,
+    workContents,
+    contactContents,
   },
   data () {
     return {
+      screenSize: {
+        topContentsHeight: null,
+        otherContentsHeight:null,
+      }
+    }
+  },
+  mounted() {
+    window.addEventListener('resize', this.handleResize)
+    this.screenSize['topContentsHeight'] = window.innerHeight - 50
+    this.screenSize['otherContentsHeight'] = window.innerHeight
+  },
+  beforeDestroy: function(){
+    window.removeEventListener('resize', this.handleResize)
+  },
+  methods: {
+    handleResize() {
+      this.screenSize['topContentsHeight'] = window.innerHeight - 50
+      this.screenSize['otherContentsHeight'] = window.innerHeight
     }
   }
 }

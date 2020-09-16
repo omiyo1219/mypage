@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'contactForm',
+  name: 'contactContents',
   data () {
     return {
     }

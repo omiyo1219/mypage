@@ -1,10 +1,10 @@
 <template>
   <v-app>
-    <div class="container">
-      <topbar></topbar>
-      <dropDownMatrix></dropDownMatrix>
+    <topbar></topbar>  <!--topbarメニュー-->
+    <dropDownMatrix></dropDownMatrix>  <!--背景エフェクト-->
+    <v-main>
       <router-view/>
-    </div>
+    </v-main>
   </v-app>
 </template>
 
@@ -23,14 +23,10 @@ export default {
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, "Hiragino Kaku Gothic ProN", sans-serif,;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
 }
 
-.container {
-  position: relative;
-  z-index: 0;
-}
 </style>
