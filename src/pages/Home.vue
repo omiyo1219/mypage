@@ -45,7 +45,6 @@ export default {
     return {
       screenSize: {
         topContentsHeight: null,
-        otherContentsHeight:null,
       }
     }
   },
@@ -53,7 +52,6 @@ export default {
     window.addEventListener('resize', this.handleResize)
     console.log(screen.height)
     this.screenSize['topContentsHeight'] = screen.height - 200
-    this.screenSize['otherContentsHeight'] = screen.height - 150
   },
   beforeDestroy: function(){
     window.removeEventListener('resize', this.handleResize)
@@ -61,7 +59,6 @@ export default {
   methods: {
     handleResize() {
       this.screenSize['topContentsHeight'] = screen.height - 200
-      this.screenSize['otherContentsHeight'] = screen.height - 150
     }
   }
 }

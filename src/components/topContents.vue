@@ -47,16 +47,18 @@ export default {
 <style scoped>
 .topContents {
   position: relative;
+  background-color: rgb(0,0,0,0);
   height: 85px;
   font-size: 3.2vw;
   font-weight: 500;
   color: #42AEEF;
   letter-spacing: 10px;
+  z-index: 1;
   text-align: center;
 }
 .setArrowPos {
   position: absolute;
-  z-index: 5;
+  z-index: 0;
   left:0;
   width:100%;
   margin-top: 2.5%;

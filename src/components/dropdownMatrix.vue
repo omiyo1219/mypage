@@ -98,6 +98,6 @@ export default {
 }
 .canvas_parent {
     position: absolute;
-    z-index: 1;
+    z-index: 2;
 }
 </style>

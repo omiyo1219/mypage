@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app style="background-color: rgb(0,0,0,0);">
     <div>
       <transition name="textSlide">
         <span class="aboutTitleStyle" v-show="showData['showAboutTitle']">
@@ -85,7 +85,6 @@ export default {
 </script>
 
 <style scoped>
-
 .aboutTitleStyle {
   position: absolute;
   right:0;
@@ -99,7 +98,6 @@ export default {
 
 .setArrowPos {
   position: absolute;
-  z-index: 5;
   left:0;
   width:100%;
   margin-top: 2.5%;
@@ -109,7 +107,7 @@ export default {
   position: relative;
   width: 100%;
   height: 100%;
-  z-index: 5;
+  z-index: 1;
   margin-top: 8%;
 }
 
