@@ -49,8 +49,8 @@ export default {
 
 <style scoped>
 .topMenu {
-  font-size: 0.9em;
-  font-weight: 1000;
+  font-size: 0.8em;
+  font-weight: 900;
   font-style: oblique;
 }
 
