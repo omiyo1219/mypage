@@ -10,7 +10,18 @@
         <img v-show="showData['showArrow']" class="setArrowPos" :src="imageData['arrowImage']">
       </transition>
     </div>
-    <v-row class="mainBody" align="center" no-gutters>
+    <v-row class="mainBody" no-gutters>
+      <v-col
+        cols="4"
+        sm="12"
+        md="4"
+        lg="4"
+        xl="4"
+      >
+        <v-img
+          :src="imageData['workLeftImage']"
+        ></v-img>
+      </v-col>
     </v-row>
   </v-app>
 </template>
@@ -28,7 +39,7 @@ export default {
     return {
       imageData: {
         arrowImage:require("@/assets/fullWidthArrow.svg"),
-        profileImage: require("@/assets/myImage.svg"),
+        workLeftImage: require("@/assets/developed_webAplication.png"),
       },
       showData: {
         showArrow: false,
