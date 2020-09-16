@@ -13,10 +13,9 @@
     <v-row
       class="topContentsStyle"
       justify="center"
-      :style="{height:screenSize['otherContentsHeight'] + 'px'}"
     >
       <v-col cols="12">
-        <aboutContents></aboutContents>
+        <aboutContents :height="screenSize['otherContentsHeight']"></aboutContents>
       </v-col>
     </v-row>
     <v-row

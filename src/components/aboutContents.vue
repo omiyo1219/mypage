@@ -1,5 +1,5 @@
 <template>
-  <div  class="workContents">
+  <div class="workContents" :style="{height:height + 'px'}">
     <transition name="textSlide">
       <div class="workTitleStyle" v-show="showData['showAboutTitle']">
         About
@@ -7,7 +7,41 @@
     </transition>
     <transition name="slide">
       <img v-show="showData['showArrow']" class="setArrowPos" :src="imageData['arrowImage']">
-    </transition><br>
+    </transition>
+    <v-row class="mainBody" align="center">
+      <v-col
+        cols="12"
+        sm="12"
+        md="5"
+        lg="5"
+        xl="5"
+        class="profileImageStyle"
+      >
+        <v-img 
+          :src="imageData['profileImage']"
+          max-height="90%"
+          max-width="90%"
+        ></v-img>
+      </v-col>
+      <v-col
+        cols="12"
+        sm="12"
+        md="5"
+        lg="5"
+        xl="5"
+        style="font-size:2.0vw; color:gray"
+      >
+        <span>
+          岡田　尋嗣<br><br>
+          1997年5月6日生まれ、仙台高等専門学校名取キャンパス機械
+          システム工学科卒。株式会社オーパス所属。
+          航空宇宙業界から転身し、2019年から一からフロントエンジニア
+          としてキャリアスタート。現在は、中規模Webアプリケーション
+          開発、UIデザイン及びコンポーネント制作を手掛ける。
+          20代前半という研鑽の時期を日々精進中。
+        </span>
+      </v-col>
+    </v-row>
   </div>
 </template>
 
@@ -15,10 +49,16 @@
 
 export default {
   name: 'aboutContents',
+  props: {
+    height: {
+      type: Number,
+    }
+  },
   data () {
     return {
       imageData: {
         arrowImage:require("@/assets/fullWidthArrow.svg"),
+        profileImage: require("@/assets/myImage.svg"),
       },
       showData: {
         showArrow: false,
@@ -43,6 +83,7 @@ export default {
 
 <style scoped>
 .workContents {
+  position: relative;
   height: 85px;
 }
 
@@ -62,6 +103,19 @@ export default {
   left:0;
   width:100%;
   margin-top: 2.5%;
+}
+
+.mainBody {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  margin-top: 6%;
+}
+
+.profileImageStyle {
+ margin-left:5%;
+ margin-right:5%;
 }
 
 .slide-enter-active, .slide-leave-active {
