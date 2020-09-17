@@ -1,5 +1,5 @@
 <template>
-  <v-app  style="background-color: rgb(0,0,0,0);">
+  <v-app  style="color: gray; background-color: rgb(0,0,0,0);">
     <div>
       <transition name="textSlide">
         <span class="workTitleStyle" v-show="showData['showworkTitle']">
@@ -12,15 +12,67 @@
     </div>
     <v-row class="mainBody" no-gutters>
       <v-col
-        cols="4"
+        cols="12"
         sm="12"
         md="4"
         lg="4"
         xl="4"
       >
         <v-img
+          class="imageRotate mt-4"
           :src="imageData['workLeftImage']"
         ></v-img>
+        <div style="margin-top:5%;">
+          <div style="text-align:center; color:#42AEEF; font-size:1.3em;">
+            － 中規模Webアプリケーション開発 －
+          </div><br>
+          <div style="width:85%; margin:auto;">
+            業務管理システムの主にフロント実装。Vue.jsにて開発。
+            ほぼ全てのhtml/cssのコーディングを担当。
+          </div>
+        </div>
+
+      </v-col>
+      <v-col
+        cols="12"
+        sm="12"
+        md="4"
+        lg="4"
+        xl="4"
+      >
+        <v-img
+          class="imageRotate mt-4"
+          :src="imageData['workCenterImage']"
+        ></v-img>
+        <div style="margin-top:5%;">
+          <div style="text-align:center; color:#42AEEF; font-size:1.3em;">
+            － UIコンポーネント開発 －
+          </div><br>
+          <div style="width:85%; margin:auto;">
+            UIのデザイン、およびUIコンポーネントを開発。
+            ボタンやダイアログ、カレンダーの作成。
+          </div>
+        </div>
+      </v-col>
+      <v-col
+        cols="12"
+        sm="12"
+        md="4"
+        lg="4"
+        xl="4"
+      >
+        <v-img
+          class="imageRotate mt-4"
+          :src="imageData['workRightImage']"
+        ></v-img>
+        <div style="margin-top:5%;">
+          <div style="text-align:center; color:#42AEEF; font-size:1.3em;">
+            － デザイン/アイコン制作 －
+          </div><br>
+          <div style="width:85%; margin:auto;">
+            AdobeのIllustratorを用いて、アイコン、テクスチャーを作成。
+          </div>
+        </div>
       </v-col>
     </v-row>
   </v-app>
@@ -39,7 +91,9 @@ export default {
     return {
       imageData: {
         arrowImage:require("@/assets/fullWidthArrow.svg"),
-        workLeftImage: require("@/assets/developed_webAplication.png"),
+        workLeftImage: require("@/assets/work/develop_Aplications.png"),
+        workCenterImage: require("@/assets/work/develop_components.png"),
+        workRightImage: require("@/assets/work/ai_icon.png"),
       },
       showData: {
         showArrow: false,
@@ -89,6 +143,10 @@ export default {
   height: 100%;
   z-index: 5;
   margin-top: 8%;
+}
+
+.imageRotate {
+  transform: rotate( -3deg );
 }
 
 .slide-enter-active, .slide-leave-active {

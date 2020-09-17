@@ -18,6 +18,7 @@
     </v-row>
     
     <v-row
+    class="mt-3"
       justify="center"
     >
       <v-col cols="12">
@@ -65,7 +66,4 @@ export default {
 </script>
 
 <style scoped>
-.contentsStyle {
-  position: relative;
-}
 </style>

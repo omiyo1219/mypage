@@ -1,5 +1,5 @@
 <template>
-  <v-app style="background-color: rgb(0,0,0,0);">
+  <v-app style="color: gray; background-color: rgb(0,0,0,0);">
     <div>
       <transition name="textSlide">
         <span class="aboutTitleStyle" v-show="showData['showAboutTitle']">
@@ -38,7 +38,7 @@
         md="5"
         lg="5"
         xl="5"
-        style="font-size:1.9em; color:gray;"
+        style="font-size:1.9em;"
       >
         <span>
           <br>
@@ -66,7 +66,7 @@ export default {
     return {
       imageData: {
         arrowImage:require("@/assets/fullWidthArrow.svg"),
-        profileImage: require("@/assets/myImage.svg"),
+        profileImage: require("@/assets/about/myImage.svg"),
       },
       showData: {
         showArrow: false,
