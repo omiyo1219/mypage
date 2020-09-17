@@ -24,7 +24,7 @@
         ></v-img>
         <div style="margin-top:5%;">
           <div style="text-align:center; color:#42AEEF; font-size:1.3em;">
-            － 中規模Webアプリケーション開発 －
+            － 中規模Webサービス開発 －
           </div><br>
           <div style="width:85%; margin:auto;">
             業務管理システムの主にフロント実装。Vue.jsにて開発。
