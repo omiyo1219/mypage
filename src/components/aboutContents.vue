@@ -38,7 +38,7 @@
         md="5"
         lg="5"
         xl="5"
-        style="font-size:1.9em;"
+        style="font-size:1.3em;"
       >
         <span>
           <br>
@@ -90,6 +90,7 @@ export default {
 </script>
 
 <style scoped>
+
 .aboutTitleStyle {
   position: absolute;
   right:0;
