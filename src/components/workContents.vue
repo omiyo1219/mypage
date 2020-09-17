@@ -1,5 +1,5 @@
 <template>
-  <v-app  style="color: gray; background-color: rgb(0,0,0,0);">
+  <v-app  class="contents">
     <div>
       <transition name="textSlide">
         <span class="workTitleStyle" v-show="showData['showworkTitle']">
@@ -10,7 +10,7 @@
         <img v-show="showData['showArrow']" class="setArrowPos" :src="imageData['arrowImage']">
       </transition>
     </div>
-    <v-row class="mainBody" no-gutters>
+    <v-row class="mainBody" no-gutters dense>
       <v-col
         cols="12"
         sm="12"
@@ -23,15 +23,15 @@
           :src="imageData['workLeftImage']"
         ></v-img>
         <div style="margin-top:5%;">
-          <div style="text-align:center; color:#42AEEF; font-size:1.3em;">
+          <div style="text-align:center; color:#42AEEF; font-size:1.4em;">
             － 中規模Webサービス開発 －
           </div><br>
-          <div style="width:85%; margin:auto;">
+          <div style="width:85%; margin:auto; font-size:1.3em;">
             業務管理システムの主にフロント実装。Vue.jsにて開発。
+            UIフレームワークはBootstrapVueを使用。<br>
             ほぼ全てのhtml/cssのコーディングを担当。
           </div>
         </div>
-
       </v-col>
       <v-col
         cols="12"
@@ -45,10 +45,10 @@
           :src="imageData['workCenterImage']"
         ></v-img>
         <div style="margin-top:5%;">
-          <div style="text-align:center; color:#42AEEF; font-size:1.3em;">
+          <div style="text-align:center; color:#42AEEF; font-size:1.4em;">
             － UIコンポーネント開発 －
           </div><br>
-          <div style="width:85%; margin:auto;">
+          <div style="width:85%; margin:auto; font-size:1.3em;">
             UIのデザイン、およびUIコンポーネントを開発。
             ボタンやダイアログ、カレンダーの作成。
           </div>
@@ -66,11 +66,11 @@
           :src="imageData['workRightImage']"
         ></v-img>
         <div style="margin-top:5%;">
-          <div style="text-align:center; color:#42AEEF; font-size:1.3em;">
+          <div style="text-align:center; color:#42AEEF; font-size:1.4em;">
             － デザイン/アイコン制作 －
           </div><br>
-          <div style="width:85%; margin:auto;">
-            AdobeのIllustratorを用いて、アイコン、テクスチャーを作成。
+          <div style="width:85%; margin:auto; font-size:1.3em;">
+            Adobe Illustratorを用いて、アイコン、テクスチャーを作成。
           </div>
         </div>
       </v-col>
@@ -117,6 +117,9 @@ export default {
 </script>
 
 <style scoped>
+.contents {
+  background-color: rgb(0,0,0,0);
+}
 
 .workTitleStyle {
   position: absolute;
@@ -139,6 +142,7 @@ export default {
 
 .mainBody {
   position: relative;
+  color: gray;
   width: 100%;
   height: 100%;
   z-index: 5;

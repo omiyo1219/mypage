@@ -1,4 +1,5 @@
 <template>
+<v-app class="contents">
   <v-container fluid>
     <v-row
       align="center"
@@ -9,29 +10,22 @@
         <topContents></topContents>
       </v-col>
     </v-row>
-    <v-row
-      justify="center"
-    >
-      <v-col cols="12">
-        <aboutContents :height="screenSize['otherContentsHeight']"></aboutContents>
-      </v-col>
-    </v-row>
+    <div class="mt-4">
+      <aboutContents></aboutContents>
+      <workContents></workContents>
+      <skillContents></skillContents>
+    </div>
     
-    <v-row
-    class="mt-3"
-      justify="center"
-    >
-      <v-col cols="12">
-        <workContents></workContents>
-      </v-col>
-    </v-row>
+    
   </v-container>
+</v-app>
 </template>
 
 <script>
 import topContents from "../components/topContents"
 import aboutContents from "../components/aboutContents"
 import workContents from "../components/workContents"
+import skillContents from "../components/skillContents"
 import contactContents from "../components/contactContents"
 
 export default {
@@ -40,6 +34,7 @@ export default {
     topContents,
     aboutContents,
     workContents,
+    skillContents,
     contactContents,
   },
   data () {
@@ -51,7 +46,6 @@ export default {
   },
   mounted() {
     window.addEventListener('resize', this.handleResize)
-    console.log(screen.height)
     this.screenSize['topContentsHeight'] = screen.height - 200
   },
   beforeDestroy: function(){
@@ -66,4 +60,7 @@ export default {
 </script>
 
 <style scoped>
+.contents {
+  background-color: rgb(0,0,0,0);
+}
 </style>

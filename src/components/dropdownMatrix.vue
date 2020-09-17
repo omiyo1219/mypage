@@ -18,7 +18,7 @@ export default {
         columns: null,
         drops: [],
         viewWidth: window.innerWidth,
-        viewHeight: 2000,
+        viewHeight: 3000,
       },
       imageData: {
         imageMaterial: require("@/assets/sqare.svg"),
@@ -86,7 +86,7 @@ export default {
     },
     handleResize() {
       this.canvasData['viewWidth'] = window.innerWidth;
-      this.canvasData['viewHeight'] = 2000;
+      this.canvasData['viewHeight'] = 3000;
     } 
   }
 }

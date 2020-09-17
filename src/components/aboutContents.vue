@@ -1,5 +1,5 @@
 <template>
-  <v-app style="color: gray; background-color: rgb(0,0,0,0);">
+  <v-app class="contents">
     <div>
       <transition name="textSlide">
         <span class="aboutTitleStyle" v-show="showData['showAboutTitle']">
@@ -57,11 +57,6 @@
 
 export default {
   name: 'aboutContents',
-  props: {
-    height: {
-      type: Number,
-    }
-  },
   data () {
     return {
       imageData: {
@@ -90,6 +85,9 @@ export default {
 </script>
 
 <style scoped>
+.contents {
+  background-color: rgb(0,0,0,0);
+}
 
 .aboutTitleStyle {
   position: absolute;
@@ -113,8 +111,10 @@ export default {
   position: relative;
   width: 100%;
   height: 100%;
+  color: gray;
   z-index: 1;
   margin-top: 8%;
+  margin-bottom: 8%;
 }
 
 .slide-enter-active, .slide-leave-active {
