@@ -7,9 +7,9 @@
       :elevation="8"
     >
       <v-row align="center">
-        <v-toolbar-title class="hidden-sm-and-down ml-3">PORTFOLIO</v-toolbar-title>
+        <v-toolbar-title class="ml-3">PORTFOLIO</v-toolbar-title>
         <v-spacer></v-spacer>
-        <v-row>
+        <v-row class="hidden-sm-and-down">
           <v-col cols="3" sm="2" md="3" lg="3" xl="3">
             <v-btn class="topMenu" text>
               <span style="color:#FCF503">A</span>bout

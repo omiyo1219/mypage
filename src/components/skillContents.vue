@@ -12,8 +12,8 @@
     </div>
     <v-row class="mainBody" no-gutters>
       <v-col
-        cols="12"
-        sm="12"
+        cols="6"
+        sm="6"
         md="4"
         lg="4"
         xl="4"
@@ -73,8 +73,8 @@
         </v-tooltip>
       </v-col>
       <v-col
-        cols="12"
-        sm="12"
+        cols="6"
+        sm="6"
         md="4"
         lg="4"
         xl="4"
@@ -131,8 +131,8 @@
         </v-tooltip>
       </v-col>
       <v-col
-        cols="12"
-        sm="12"
+        cols="6"
+        sm="6"
         md="4"
         lg="4"
         xl="4"
@@ -192,8 +192,8 @@
 
 
       <v-col
-        cols="12"
-        sm="12"
+        cols="6"
+        sm="6"
         md="4"
         lg="4"
         xl="4"
@@ -207,8 +207,8 @@
         </div>
       </v-col>
       <v-col
-        cols="12"
-        sm="12"
+        cols="6"
+        sm="6"
         md="4"
         lg="4"
         xl="4"
@@ -222,8 +222,8 @@
         </div>
       </v-col>
       <v-col
-        cols="12"
-        sm="12"
+        cols="6"
+        sm="6"
         md="4"
         lg="4"
         xl="4"
@@ -237,17 +237,6 @@
         </div>
       </v-col>
     </v-row>
-     <v-tooltip bottom>
-      <template v-slot:activator="{ on, attrs }">
-        <v-btn
-          color="primary"
-          dark
-          v-bind="attrs"
-          v-on="on"
-        >Button</v-btn>
-      </template>
-      <span>Tooltip</span>
-    </v-tooltip>
   </v-app>
 </template>
 
