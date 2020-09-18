@@ -28,7 +28,7 @@
               v-on="on"
             >
               <v-img
-                class="img_wrap mt-4"
+                class="img_wrap"
                 :src="imageData['htmlIcon']"
               ></v-img>
             </div>
@@ -89,7 +89,7 @@
               v-on="on"
             >
               <v-img
-                class="img_wrap mt-4"
+                class="img_wrap"
                 :src="imageData['javascriptIcon']"
               ></v-img>
             </div>
@@ -147,7 +147,7 @@
               v-on="on"
             >
               <v-img
-                class="img_wrap mt-4"
+                class="img_wrap"
                 :src="imageData['vueIcon']"
               ></v-img>
             </div>
@@ -201,7 +201,7 @@
       >
         <div v-show="showData['showImage']" class="btnCircle">
           <v-img
-            class="img_wrap  mt-4"
+            class="img_wrap"
             :src="imageData['psdIcon']"
           ></v-img>
         </div>
