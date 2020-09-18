@@ -17,6 +17,7 @@
         md="4"
         lg="4"
         xl="4"
+        align-self="center"
         style="text-align:center"
       >
         <v-tooltip bottom>
@@ -78,6 +79,7 @@
         md="4"
         lg="4"
         xl="4"
+        align-self="center"
         style="text-align:center"
       >
         <v-tooltip bottom>
@@ -136,6 +138,7 @@
         md="4"
         lg="4"
         xl="4"
+        align-self="center"
         style="text-align:center"
       >
         <v-tooltip bottom>
@@ -197,6 +200,7 @@
         md="4"
         lg="4"
         xl="4"
+        align-self="center"
         style="text-align:center"
       >
         <div v-show="showData['showImage']" class="btnCircle">
@@ -212,6 +216,7 @@
         md="4"
         lg="4"
         xl="4"
+        align-self="center"
         style="text-align:center"
       >
         <div v-show="showData['showImage']" class="btnCircle  mt-4">
@@ -227,6 +232,7 @@
         md="4"
         lg="4"
         xl="4"
+        align-self="center"
         style="text-align:center"
       >
         <div v-show="showData['showImage']" class="btnCircle  mt-4">
