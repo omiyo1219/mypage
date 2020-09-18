@@ -25,7 +25,6 @@
               v-show="showData['showImage']"
               class="btnCircle"
               v-bind="attrs"
-              @click="on"
               v-on="on"
             >
               <v-img
@@ -34,7 +33,7 @@
               ></v-img>
             </div>
           </template>
-          <v-row class="mt-4 mb-4" style="max-width:500px;" no-gutters>
+          <v-row class="mt-4 mb-4" align="center" style="max-width:35vw;" no-gutters>
             <v-col
               cols="12"
               sm="12"
@@ -51,7 +50,7 @@
             </v-col>
             <v-col
               cols="1"
-              sm="12"
+              sm="1"
               md="1"
               lg="1"
               xl="1"
@@ -63,7 +62,7 @@
               lg="6"
               xl="6"
             >
-              <div>
+              <div style="min-width:150px; font-size:1.1vw;">
                 基本のHTML/CSSは元より、
                 HTML5から追加されたcanvasの使用経験有り。
                 <br>
@@ -95,7 +94,7 @@
               ></v-img>
             </div>
           </template>
-          <v-row class="mt-4 mb-4" style="max-width:500px;" no-gutters>
+          <v-row class="mt-4 mb-4" align="center" style="max-width:35vw;" no-gutters>
             <v-col
               cols="12"
               sm="12"
@@ -112,7 +111,7 @@
             </v-col>
             <v-col
               cols="1"
-              sm="12"
+              sm="1"
               md="1"
               lg="1"
               xl="1"
@@ -124,7 +123,7 @@
               lg="6"
               xl="6"
             >
-              <div>
+              <div style="min-width:150px; font-size:1.1vw;">
                 Javascript使用歴は9ヶ月程度であるが、複雑なアニメーションやカレンダーのアルゴリズムも実装経験有。
               </div>
             </v-col>
@@ -153,22 +152,23 @@
               ></v-img>
             </div>
           </template>
-          <v-row class="mt-4 mb-4" style="max-width:500px;" no-gutters>
+          <v-row class="mt-4 mb-4" align="center" style="max-width:35vw;" no-gutters>
             <v-col
               cols="12"
               sm="12"
               md="5"
               lg="5"
               xl="5"
-              style="text-align:center"
             >
               <v-img
-                :src="imageData['htmlHoverImage']"
+                class="ml-2 mr-2"
+                :src="imageData['vueHoverImage']"
+                width="90%"
               ></v-img>
             </v-col>
             <v-col
               cols="1"
-              sm="12"
+              sm="1"
               md="1"
               lg="1"
               xl="1"
@@ -180,11 +180,9 @@
               lg="6"
               xl="6"
             >
-              <div>
-                基本のHTML/CSSは元より、
-                HTML5から追加されたcanvasの使用経験有り。
-                <br>
-                canvasではpainter機能や3Dオブジェクトの表示も可能。
+              <div style="min-width:150px; font-size:1.1vw;">
+                Vue.jsを用い、UIコンポーネントのデザイン/制作をメインとしての開発経験有り。<br>
+                本PortfolioもVue.jsによって制作。
               </div>
             </v-col>
           </v-row>
@@ -257,6 +255,7 @@ export default {
         xdIcon: require("@/assets/skill/xd_icon.svg"),
         htmlHoverImage: require("@/assets/skill/paint.gif"),
         javascriptHoverImage: require("@/assets/skill/matrix.gif"),
+        vueHoverImage: require("@/assets/skill/calendar.gif"),
       },
       showData: {
         showArrow: false,
