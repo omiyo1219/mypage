@@ -28,21 +28,45 @@
               v-on="on"
             >
               <v-img
-                class="img_wrap  mt-4"
+                class="img_wrap mt-4"
                 :src="imageData['htmlIcon']"
               ></v-img>
             </div>
           </template>
-          <v-row align="center" no-gutters>
-            <v-col cols="5" style="text-align:center">
+          <v-row class="mt-4 mb-4" style="max-width:500px;" no-gutters>
+            <v-col
+              cols="12"
+              sm="12"
+              md="5"
+              lg="5"
+              xl="5"
+              style="text-align:center"
+            >
               <v-img
-                :src="imageData['htmlIcon']"
+                class="ml-2 mr-2"
+                :src="imageData['htmlHoverImage']"
+                width="90%"
               ></v-img>
             </v-col>
-            <v-col cols="7">
+            <v-col
+              cols="1"
+              sm="12"
+              md="1"
+              lg="1"
+              xl="1"
+            ></v-col>
+            <v-col
+              cols="6"
+              sm="12"
+              md="6"
+              lg="6"
+              xl="6"
+            >
               <div>
                 基本のHTML/CSSは元より、
                 HTML5から追加されたcanvasの使用経験有り。
+                <br>
+                canvasではpainter機能や3Dオブジェクトの表示も可能。
               </div>
             </v-col>
           </v-row>
@@ -56,12 +80,55 @@
         xl="4"
         style="text-align:center"
       >
-        <div v-show="showData['showImage']" class="btnCircle  mt-4">
-          <v-img
-            class="img_wrap"
-            :src="imageData['javascriptIcon']"
-          ></v-img>
-        </div>
+        <v-tooltip bottom>
+          <template v-slot:activator="{ on, attrs }">
+            <div
+              v-show="showData['showImage']"
+              class="btnCircle"
+              v-bind="attrs"
+              v-on="on"
+            >
+              <v-img
+                class="img_wrap mt-4"
+                :src="imageData['javascriptIcon']"
+              ></v-img>
+            </div>
+          </template>
+          <v-row class="mt-4 mb-4" style="max-width:500px;" no-gutters>
+            <v-col
+              cols="12"
+              sm="12"
+              md="5"
+              lg="5"
+              xl="5"
+              style="text-align:center"
+            >
+              <v-img
+                class="ml-2 mr-2"
+                :src="imageData['javascriptHoverImage']"
+                width="90%"
+              ></v-img>
+            </v-col>
+            <v-col
+              cols="1"
+              sm="12"
+              md="1"
+              lg="1"
+              xl="1"
+            ></v-col>
+            <v-col
+              cols="6"
+              sm="12"
+              md="6"
+              lg="6"
+              xl="6"
+            >
+              <div>
+                Javascript使用歴は9ヶ月程度であるが、複雑なアニメーションやカレンダーのアルゴリズムも実装経験有。
+              </div>
+            </v-col>
+          </v-row>
+        </v-tooltip>
       </v-col>
       <v-col
         cols="12"
@@ -71,15 +138,59 @@
         xl="4"
         style="text-align:center"
       >
-        <div v-show="showData['showImage']" class="btnCircle  mt-4">
-          <v-img
-            class="img_wrap"
-            :src="imageData['vueIcon']"
-          ></v-img>
-        </div>
+        <v-tooltip bottom>
+          <template v-slot:activator="{ on, attrs }">
+            <div
+              v-show="showData['showImage']"
+              class="btnCircle"
+              v-bind="attrs"
+              v-on="on"
+            >
+              <v-img
+                class="img_wrap mt-4"
+                :src="imageData['vueIcon']"
+              ></v-img>
+            </div>
+          </template>
+          <v-row class="mt-4 mb-4" style="max-width:500px;" no-gutters>
+            <v-col
+              cols="12"
+              sm="12"
+              md="5"
+              lg="5"
+              xl="5"
+              style="text-align:center"
+            >
+              <v-img
+                :src="imageData['htmlHoverImage']"
+              ></v-img>
+            </v-col>
+            <v-col
+              cols="1"
+              sm="12"
+              md="1"
+              lg="1"
+              xl="1"
+            ></v-col>
+            <v-col
+              cols="6"
+              sm="12"
+              md="6"
+              lg="6"
+              xl="6"
+            >
+              <div>
+                基本のHTML/CSSは元より、
+                HTML5から追加されたcanvasの使用経験有り。
+                <br>
+                canvasではpainter機能や3Dオブジェクトの表示も可能。
+              </div>
+            </v-col>
+          </v-row>
+        </v-tooltip>
       </v-col>
-    </v-row>
-    <v-row no-gutters>
+
+
       <v-col
         cols="12"
         sm="12"
@@ -143,6 +254,8 @@ export default {
         psdIcon: require("@/assets/skill/photoshop_icon.svg"),
         aiIcon: require("@/assets/skill/illustrator_icon.svg"),
         xdIcon: require("@/assets/skill/xd_icon.svg"),
+        htmlHoverImage: require("@/assets/skill/paint.gif"),
+        javascriptHoverImage: require("@/assets/skill/matrix.gif"),
       },
       showData: {
         showArrow: false,

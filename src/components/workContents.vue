@@ -70,7 +70,7 @@
             － デザイン/アイコン制作 －
           </div><br>
           <div style="width:85%; margin:auto; font-size:1.3em;">
-            Adobe Illustratorを用いて、アイコン、テクスチャーを作成。
+            Adobe Illustrator, Photoshopを用いて、アイコン、テクスチャーを作成。
           </div>
         </div>
       </v-col>
