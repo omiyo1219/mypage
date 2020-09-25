@@ -14,6 +14,7 @@
       <aboutContents></aboutContents>
       <workContents></workContents>
       <skillContents></skillContents>
+      <contactContents></contactContents>
     </div>
     
     

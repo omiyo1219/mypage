@@ -198,12 +198,54 @@
         xl="4"
         style="text-align:center"
       >
-        <div v-show="showData['showImage']" class="btnCircle">
-          <v-img
-            class="img_wrap"
-            :src="imageData['psdIcon']"
-          ></v-img>
-        </div>
+        <v-tooltip bottom>
+          <template v-slot:activator="{ on, attrs }">
+            <div
+              v-show="showData['showImage']"
+              class="btnCircle"
+              v-bind="attrs"
+              v-on="on"
+            >
+              <v-img
+                class="img_wrap"
+                :src="imageData['psdIcon']"
+              ></v-img>
+            </div>
+          </template>
+          <v-row class="mt-4 mb-4" align="center" style="max-width:35vw;" no-gutters>
+            <v-col
+              cols="12"
+              sm="12"
+              md="5"
+              lg="5"
+              xl="5"
+            >
+              <v-img
+                class="ml-2 mr-2"
+                :src="imageData['vueHoverImage']"
+                width="90%"
+              ></v-img>
+            </v-col>
+            <v-col
+              cols="1"
+              sm="1"
+              md="1"
+              lg="1"
+              xl="1"
+            ></v-col>
+            <v-col
+              cols="6"
+              sm="12"
+              md="6"
+              lg="6"
+              xl="6"
+            >
+              <div style="min-width:150px; font-size:1.1vw;">
+                Photoshopを用いて、簡単な画像トリミングや現実の写真をアニメ塗りに調整などの経験あり。
+              </div>
+            </v-col>
+          </v-row>
+        </v-tooltip>
       </v-col>
       <v-col
         cols="6"
@@ -213,12 +255,55 @@
         xl="4"
         style="text-align:center"
       >
-        <div v-show="showData['showImage']" class="btnCircle  mt-4">
-          <v-img
-            class="img_wrap"
-            :src="imageData['aiIcon']"
-          ></v-img>
-        </div>
+        <v-tooltip bottom>
+          <template v-slot:activator="{ on, attrs }">
+            <div
+              v-show="showData['showImage']"
+              class="btnCircle"
+              v-bind="attrs"
+              v-on="on"
+            >
+              <v-img
+                class="img_wrap"
+                :src="imageData['aiIcon']"
+              ></v-img>
+            </div>
+          </template>
+          <v-row class="mt-4 mb-4" align="center" style="max-width:35vw;" no-gutters>
+            <v-col
+              cols="12"
+              sm="12"
+              md="5"
+              lg="5"
+              xl="5"
+            >
+              <v-img
+                class="ml-2 mr-2"
+                :src="imageData['vueHoverImage']"
+                width="90%"
+              ></v-img>
+            </v-col>
+            <v-col
+              cols="1"
+              sm="1"
+              md="1"
+              lg="1"
+              xl="1"
+            ></v-col>
+            <v-col
+              cols="6"
+              sm="12"
+              md="6"
+              lg="6"
+              xl="6"
+            >
+              <div style="min-width:150px; font-size:1.1vw;">
+                illustratorを用いて、UIアイコンやロゴ制作の経験あり。<br>
+                本Webサイトで使用されている素材もillustratorによって作成。
+              </div>
+            </v-col>
+          </v-row>
+        </v-tooltip>
       </v-col>
       <v-col
         cols="6"
@@ -228,12 +313,55 @@
         xl="4"
         style="text-align:center"
       >
-        <div v-show="showData['showImage']" class="btnCircle  mt-4">
-          <v-img
-            class="img_wrap"
-            :src="imageData['xdIcon']"
-          ></v-img>
-        </div>
+        <v-tooltip bottom>
+          <template v-slot:activator="{ on, attrs }">
+            <div
+              v-show="showData['showImage']"
+              class="btnCircle"
+              v-bind="attrs"
+              v-on="on"
+            >
+              <v-img
+                class="img_wrap"
+                :src="imageData['xdIcon']"
+              ></v-img>
+            </div>
+          </template>
+          <v-row class="mt-4 mb-4" align="center" style="max-width:35vw;" no-gutters>
+            <v-col
+              cols="12"
+              sm="12"
+              md="5"
+              lg="5"
+              xl="5"
+            >
+              <v-img
+                class="ml-2 mr-2"
+                :src="imageData['vueHoverImage']"
+                width="90%"
+              ></v-img>
+            </v-col>
+            <v-col
+              cols="1"
+              sm="1"
+              md="1"
+              lg="1"
+              xl="1"
+            ></v-col>
+            <v-col
+              cols="6"
+              sm="12"
+              md="6"
+              lg="6"
+              xl="6"
+            >
+              <div style="min-width:150px; font-size:1.1vw;">
+                XDを用いて、Webデザインやプロトタイプの使用によりUIの挙動やWebサイトの遷移の作成。<br>
+                会議などでも積極的に使用することでクライアントのコンセンサスも円滑に得ることが可能。
+              </div>
+            </v-col>
+          </v-row>
+        </v-tooltip>
       </v-col>
     </v-row>
   </v-app>
