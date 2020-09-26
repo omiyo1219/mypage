@@ -29,7 +29,7 @@
           <div style="width:85%; margin:auto; font-size:1.3em;">
             業務管理システムの主にフロント実装。Vue.jsにて開発。
             UIフレームワークはBootstrapVueを使用。<br>
-            ほぼ全てのhtml/cssのコーディングを担当。
+            主にhtml/cssのコーディングを担当。
           </div>
         </div>
       </v-col>

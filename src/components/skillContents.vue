@@ -222,7 +222,7 @@
             >
               <v-img
                 class="ml-2 mr-2"
-                :src="imageData['vueHoverImage']"
+                :src="imageData['psdHoverImage']"
                 width="90%"
               ></v-img>
             </v-col>
@@ -279,7 +279,7 @@
             >
               <v-img
                 class="ml-2 mr-2"
-                :src="imageData['vueHoverImage']"
+                :src="imageData['aiHoverImage']"
                 width="90%"
               ></v-img>
             </v-col>
@@ -337,7 +337,7 @@
             >
               <v-img
                 class="ml-2 mr-2"
-                :src="imageData['vueHoverImage']"
+                :src="imageData['xdHoverImage']"
                 width="90%"
               ></v-img>
             </v-col>
@@ -357,7 +357,7 @@
             >
               <div style="min-width:150px; font-size:1.1vw;">
                 XDを用いて、Webデザインやプロトタイプの使用によりUIの挙動やWebサイトの遷移の作成。<br>
-                会議などでも積極的に使用することでクライアントのコンセンサスも円滑に得ることが可能。
+                会議などで積極的に使用することでクライアントのコンセンサスも円滑に得ることが可能。
               </div>
             </v-col>
           </v-row>
@@ -384,6 +384,9 @@ export default {
         htmlHoverImage: require("@/assets/skill/paint.gif"),
         javascriptHoverImage: require("@/assets/skill/matrix.gif"),
         vueHoverImage: require("@/assets/skill/calendar.gif"),
+        psdHoverImage: require("@/assets/skill/photoshop_skill.png"),
+        aiHoverImage: require("@/assets/skill/illustrator_skill.png"),
+        xdHoverImage: require("@/assets/skill/xd.gif"),
       },
       showData: {
         showArrow: false,
