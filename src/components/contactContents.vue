@@ -14,7 +14,7 @@
       <v-col class="inputFormTitle" cols="4" align-self="center">
         お名前
       </v-col>
-      <v-col cols="8" align-self="center">
+      <v-col cols="6" align-self="center">
         <form>
           <v-text-field
             v-model="name"
@@ -30,7 +30,7 @@
       <v-col class="inputFormTitle" cols="4" align-self="center">
         メールアドレス
       </v-col>
-      <v-col cols="8" align-self="center">
+      <v-col cols="6" align-self="center">
         <form>
           <v-text-field
             v-model="email"
@@ -45,7 +45,7 @@
       <v-col class="inputFormTitle" cols="4" style="margin-top:4%">
         お問い合わせ内容
       </v-col>
-      <v-col cols="8" style="margin-top:4%">
+      <v-col cols="6" style="margin-top:4%">
         <form>
           <v-textarea
             outlined
@@ -57,8 +57,9 @@
           ></v-textarea>
         </form>
       </v-col>
-      <v-btn class="mr-4" @click="sendForm()">submit</v-btn>
-      <v-btn @click="resetForm()">clear</v-btn>
+      <v-col cols="12">
+        <v-btn class="mr-4" @click="sendForm()">送信</v-btn>
+      </v-col>
     </v-row>
   </v-app>
 </template>
@@ -137,11 +138,6 @@ export default {
     },
     sendForm () {
       this.$v.$touch()
-    },
-    resetForm () {
-      this.$v.$reset()
-      this.name = ''
-      this.email = ''
     },
   }
 }
