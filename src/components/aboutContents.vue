@@ -1,13 +1,13 @@
 <template>
   <v-app class="contents">
-    <div>
+    <div id="observer">
       <transition name="textSlide">
         <span class="aboutTitleStyle" v-show="showData['showAboutTitle']">
           About
         </span>
       </transition>
       <transition name="slide">
-        <img v-show="showData['showArrow']" class="setArrowPos" :src="imageData['arrowImage']">
+        <img id="arrow" v-show="showData['showArrow']" class="setArrowPos" :src="imageData['arrowImage']">
       </transition>
     </div>
     <v-row class="mainBody" align="center" no-gutters>
@@ -64,21 +64,35 @@ export default {
         profileImage: require("@/assets/about/myImage.jpg"),
       },
       showData: {
-        showArrow: false,
+        showArrow: true,
         showAboutTitle: false
       }
     }
   },
   mounted() {
-    setTimeout(this.slideArrow, 200);
-    setTimeout(this.slideName, 1000);
+    const options = {
+      root: null,
+      rootMargin: "-10%",
+      threshold: 0
+    }
+
+    const arrow = document.getElementById('observer')
+    this.onIntersect(arrow, options);
   },
   methods: {
     slideArrow() {
-      this.showData['showArrow'] = true;
+      if(this.showData['showArrow']) {
+        this.showData['showArrow'] = false;
+      } else {
+        this.showData['showArrow'] = true;
+      }
     },
-    slideName() {
-      this.showData['showAboutTitle'] = true;
+    onIntersect(target, options = {}) {
+      const observer = new IntersectionObserver(this.addShowClass, options)
+      observer.observe(target)
+    },
+    addShowClass() {
+      this.slideArrow();
     }
   }
 }

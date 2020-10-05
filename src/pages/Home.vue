@@ -26,7 +26,7 @@
         </v-img>
       </div>
     </transition>
-    <div class="mt-4" v-cloak>
+    <div style="margin-top:10%" v-cloak>
       <aboutContents></aboutContents>
       <workContents></workContents>
       <skillContents></skillContents>
