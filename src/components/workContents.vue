@@ -1,13 +1,13 @@
 <template>
   <v-app  class="contents">
-    <div>
+    <div id="workObserver">
       <transition name="textSlide">
-        <span class="workTitleStyle" v-show="showData['showworkTitle']">
+        <span class="workTitleStyle" v-show="showData['showWorkTitle']">
           Work
         </span>
       </transition>
       <transition name="slide">
-        <img v-show="showData['showArrow']" class="setArrowPos" :src="imageData['arrowImage']">
+        <img v-show="showData['showWorkTitle']" class="setArrowPos" :src="imageData['arrowImage']">
       </transition>
     </div>
     <v-row class="mainBody" no-gutters dense>
@@ -96,21 +96,34 @@ export default {
         workRightImage: require("@/assets/work/ai_icon.png"),
       },
       showData: {
-        showArrow: false,
-        showworkTitle: false
+        showWorkTitle: true,
       }
     }
   },
   mounted() {
-    setTimeout(this.slideArrow, 200);
-    setTimeout(this.slideName, 1000);
+    const options = {
+      root: null,
+      rootMargin: "0px 0px -5%",
+      threshold: 0.5
+    };
+
+    const target = document.getElementById('workObserver');
+    this.onIntersect(target, options);
   },
   methods: {
-    slideArrow() {
-      this.showData['showArrow'] = true;
+    showImages() {
+      if(this.showData['showWorkTitle']) {
+        this.showData['showWorkTitle'] = false;
+      } else {
+        this.showData['showWorkTitle'] = true;
+      }
     },
-    slideName() {
-      this.showData['showworkTitle'] = true;
+    onIntersect(target, options = {}) {
+      const observer = new IntersectionObserver(this.slideImages, options);
+      observer.observe(target);
+    },
+    slideImages() {
+      this.showImages();
     }
   }
 }
@@ -161,10 +174,20 @@ export default {
 }
 
 .textSlide-enter-active, .textSlide-leave-active {
-  transition: transform .28s
+  transition: all .6s ease 0s;
+  transition-delay:.7s;
 }
+
+.textSlide-enter,.textSlide-leave-to {
+  opacity: 0;
+}
+
 .textSlide-enter {
-  transform: translateX(-150px)
+  transform: translateX(-150px);
+}
+
+.textSlide-enter-to {
+  transform: translateX(0);
 }
 
 </style>

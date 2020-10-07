@@ -1,13 +1,13 @@
 <template>
-  <v-app class="contents" v-show="showData['showContents']">
-    <div>
+  <v-app class="contents">
+    <div id="contactObserver">
       <transition name="textSlide">
-        <span class="skillTitleStyle" v-show="showData['showcontactTitle']">
+        <span class="skillTitleStyle" v-show="showData['showContactTitle']">
           Contact
         </span>
       </transition>
       <transition name="slide">
-        <img v-show="showData['showArrow']" class="setArrowPos" :src="imageData['arrowImage']">
+        <img v-show="showData['showContactTitle']" class="setArrowPos" :src="imageData['arrowImage']">
       </transition>
     </div>
     <v-row class="mainBody" justify="center" align="center" no-gutters>
@@ -29,47 +29,49 @@
 
 <script>
 export default {
-  name: 'skillContents',
+  name: 'contactContents',
   data () {
     return {
       imageData: {
         arrowImage: require("@/assets/fullWidthArrow.svg"),
       },
       showData: {
-        showContents: false,
-        showArrow: false,
-        showcontactTitle: false,
-        showImage: true,
+        showContactTitle: true,
+        showImage: false,
       },
     }
   },
   mounted() {
-    window.addEventListener('scroll', this.handleScroll)
+    const options = {
+      root: null,
+      rootMargin: "0px 0px -5%",
+      threshold: 0
+    };
+
+    const target = document.getElementById('contactObserver');
+    this.onIntersect(target, options);
   },
   methods: {
-    slideArrow() {
-      this.showData['showArrow'] = true;
-    },
-    slideName() {
-      this.showData['showcontactTitle'] = true;
-    },
     openMailer() {
       var mail = "m.kyogetsu@gmail.com"
       var title = "お問い合わせ"
       window.open("https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&to=m.kyogetsu@gmail.com&su=お問い合わせ")
     },
-    handleScroll() {
-      if(window.scrollY > 1910) {
-        this.showData['showContents'] = true;
-        this.showData['showArrow'] = true;
-        this.showData['showcontactTitle'] = true;
-
+    showImages() {
+      if(this.showData['showContactTitle']) {
+        this.showData['showContactTitle'] = false;
       } else {
-        this.showData['showContents'] = false;
-        this.showData['showArrow'] = false;
-        this.showData['showcontactTitle'] = false;
+        this.showData['showContactTitle'] = true;
+        this.showData['showImage'] = true;
       }
     },
+    onIntersect(target, options = {}) {
+      const observer = new IntersectionObserver(this.slideImages, options);
+      observer.observe(target);
+    },
+    slideImages() {
+      this.showImages();
+    }
   }
 }
 </script>
@@ -133,10 +135,20 @@ export default {
 }
 
 .textSlide-enter-active, .textSlide-leave-active {
-  transition: transform .28s
+  transition: all .6s ease 0s;
+  transition-delay:.7s;
 }
+
+.textSlide-enter,.textSlide-leave-to {
+  opacity: 0;
+}
+
 .textSlide-enter {
-  transform: translateX(-150px)
+  transform: translateX(-150px);
+}
+
+.textSlide-enter-to {
+  transform: translateX(0);
 }
 
 </style>

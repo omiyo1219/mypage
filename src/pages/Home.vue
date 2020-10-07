@@ -1,5 +1,41 @@
 <template>
 <v-app class="contents">
+  <dropDownMatrix></dropDownMatrix>  <!--背景エフェクト-->
+  <v-app-bar
+    id="top"
+    fixed
+    color="#42AEEF"
+    dark
+    :elevation="8"
+    style="position:relative; z-index:100;"
+  >
+    <v-row align="center">
+      <v-toolbar-title class="ml-3">PORTFOLIO</v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-row class="hidden-sm-and-down">
+        <v-col cols="3" sm="2" md="3" lg="3" xl="3">
+          <v-btn class="topMenu" text v-scroll-to="'#about'">
+            <span style="color:#FCF503">A</span>bout
+          </v-btn>
+        </v-col>
+        <v-col cols="3" sm="2" md="3" lg="3" xl="3">
+          <v-btn class="topMenu" text v-scroll-to="'#work'">
+            <span style="color:#FCF503">W</span>ork
+          </v-btn>
+        </v-col>
+        <v-col cols="3" sm="2" md="3" lg="3" xl="3">
+          <v-btn class="topMenu" text v-scroll-to="'#skill'">
+            <span style="color:#FCF503">S</span>kill
+          </v-btn>
+        </v-col>
+        <v-col cols="3" sm="2" md="3" lg="3" xl="3">
+          <v-btn class="topMenu" text v-scroll-to="'#contact'">
+            <span style="color:#FCF503">C</span>ontact
+          </v-btn>
+        </v-col>
+      </v-row>
+    </v-row>
+  </v-app-bar>
   <v-container fluid>
     <v-row
       align="center"
@@ -9,14 +45,26 @@
       <v-col cols="12">
         <topContents></topContents>
       </v-col>
+      <transition name="fade">
+        <div v-show="pageScroll['scrollY'] == 0" class="announceScrollMove">
+          <v-img
+            class="announceScrollHover"
+            v-scroll-to="'#about'"
+            :src="imageData['announceScroll']"
+            width="100"
+            height="150"
+          >
+          </v-img>
+        </div>
+      </transition>
     </v-row>
-    <transition name="bottom">
+    <transition name="bottomSlide">
       <div 
         class="moveTopStyle hidden-sm-and-down"
         v-show="pageScroll['scrollY'] > 300"
         @mouseover="hoverImage(true)"
         @mouseleave="hoverImage(false)"
-        @click="toTop"
+        v-scroll-to="'#top'"
       >
         <v-img
           :src="imageData['moveTop']"
@@ -27,10 +75,10 @@
       </div>
     </transition>
     <div style="margin-top:10%" v-cloak>
-      <aboutContents></aboutContents>
-      <workContents></workContents>
-      <skillContents></skillContents>
-      <contactContents></contactContents>
+      <aboutContents id="about"></aboutContents>
+      <workContents id="work"></workContents>
+      <skillContents id="skill"></skillContents>
+      <contactContents id="contact"></contactContents>
     </div>
     
   </v-container>
@@ -38,6 +86,7 @@
 </template>
 
 <script>
+import dropDownMatrix from "../components/dropdownMatrix"
 import topContents from "../components/topContents"
 import aboutContents from "../components/aboutContents"
 import workContents from "../components/workContents"
@@ -47,6 +96,7 @@ import contactContents from "../components/contactContents"
 export default {
   name: 'Home',
   components: {
+    dropDownMatrix,
     topContents,
     aboutContents,
     workContents,
@@ -57,6 +107,7 @@ export default {
     return {
       imageData: {
         moveTop: require("@/assets/pageTopIcon.svg"),
+        announceScroll: require("@/assets/announceScroll.svg"),
       },
       screenSize: {
         topContentsHeight: null,
@@ -65,37 +116,29 @@ export default {
         scTimer: 0,
         scrollY: 0,
       },
-      
     }
   },
   mounted() {
     window.addEventListener('resize', this.handleResize);
     window.addEventListener('scroll', this.handleScroll);
-    this.screenSize['topContentsHeight'] = screen.height - 200;
+    this.screenSize['topContentsHeight'] = screen.height * 0.87;
   },
   beforeDestroy: function(){
     window.removeEventListener('resize', this.handleResize);
   },
   methods: {
     handleResize() {
-      this.screenSize['topContentsHeight'] = screen.height - 200;
+      this.screenSize['topContentsHeight'] = screen.height * 0.87;
     },
     handleScroll: function () {
       if (this.pageScroll['scTimer']) {
         return;
       }
-
       this.pageScroll['scTimer'] = setTimeout(() => {
         this.pageScroll['scrollY'] = window.scrollY;
         clearTimeout(this.pageScroll['scTimer']);
         this.pageScroll['scTimer'] = 0;
       }, 100);
-    },
-    toTop() {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      });
     },
     hoverImage(bool) {
       if(bool) {
@@ -103,8 +146,7 @@ export default {
       } else {
         this.imageData['moveTop'] = require("@/assets/pageTopIcon.svg");
       }
-      
-    }
+    },
   }
 }
 </script>
@@ -115,6 +157,12 @@ export default {
   background-color: rgb(0,0,0,0);
 }
 
+.topMenu {
+  font-size: 0.8em;
+  font-weight: 1000;
+  font-style: oblique;
+}
+
 .moveTopStyle {
   cursor: pointer;
   position: fixed;
@@ -123,19 +171,59 @@ export default {
   bottom: 0;
 }
 
-.bottom-enter-active, .bottom-leave-active {
+.announceScrollMove {
+  position: fixed;
+  z-index: 999;
+  bottom: 0;
+  animation-name: floatVartical;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-duration: 1.5s;
+}
+
+@keyframes floatVartical {
+  0% {
+    transform: translate(0,0px);
+  }
+
+  100% {
+    transform: translate(0,-25px);
+  }
+}
+
+.announceScrollHover {
+  cursor: pointer;
+  transition: .8s ;
+	transform: rotateY( 0deg );
+}
+
+.announceScrollHover:hover {
+  transform: rotateY( 360deg );
+}
+
+.fade-enter-active, .fade-leave-active {
+  will-change: opacity;
+  transition: opacity 500ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+
+.fade-enter, .fade-leave-to {
+  opacity: 0
+}
+
+.bottomSlide-enter-active, .bottomSlide-leave-active {
   transition: all 0.5s ease 0s;
 }
 
-.bottom-enter,.bottom-leave-to {
+.bottomSlide-enter,.bottomSlide-leave-to {
   opacity: 0;
 }
 
-.bottom-enter, .bottom-leave-to{
+.bottomSlide-enter, .bottomSlide-leave-to{
   transform: translateY(60px);
 }
 
-.bottom-enter-to,.bottom-leave {
+.bottomSlide-enter-to,.bottomSlide-leave {
   transform: translateY(0);
 }
 </style>

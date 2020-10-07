@@ -1,13 +1,13 @@
 <template>
   <v-app class="contents">
-    <div id="observer">
+    <div id="aboutObserver">
       <transition name="textSlide">
-        <span class="aboutTitleStyle" v-show="showData['showAboutTitle']">
+        <span v-show="showData['showAboutTitle']" class="aboutTitleStyle">
           About
         </span>
       </transition>
       <transition name="slide">
-        <img id="arrow" v-show="showData['showArrow']" class="setArrowPos" :src="imageData['arrowImage']">
+        <img v-show="showData['showAboutTitle']" id="arrow" class="setArrowPos" :src="imageData['arrowImage']">
       </transition>
     </div>
     <v-row class="mainBody" align="center" no-gutters>
@@ -20,6 +20,7 @@
         class="ml-3 mr-3"
       >
         <v-img
+          v-show="showData['showImage']"
           :src="imageData['profileImage']"
           width="95%"
           height="95%"
@@ -64,35 +65,36 @@ export default {
         profileImage: require("@/assets/about/myImage.jpg"),
       },
       showData: {
-        showArrow: true,
-        showAboutTitle: false
+        showAboutTitle: true,
+        showImage: false,
       }
     }
   },
   mounted() {
     const options = {
       root: null,
-      rootMargin: "-10%",
+      rootMargin: "0px 0px -5%",
       threshold: 0
     }
 
-    const arrow = document.getElementById('observer')
-    this.onIntersect(arrow, options);
+    const target = document.getElementById('aboutObserver');
+    this.onIntersect(target, options);
   },
   methods: {
-    slideArrow() {
-      if(this.showData['showArrow']) {
-        this.showData['showArrow'] = false;
+    showImages() {
+      if(this.showData['showAboutTitle']) {
+        this.showData['showAboutTitle'] = false;
       } else {
-        this.showData['showArrow'] = true;
+        this.showData['showAboutTitle'] = true;
+        this.showData['showImage'] = true;
       }
     },
     onIntersect(target, options = {}) {
-      const observer = new IntersectionObserver(this.addShowClass, options)
-      observer.observe(target)
+      const observer = new IntersectionObserver(this.slideImages, options);
+      observer.observe(target);
     },
-    addShowClass() {
-      this.slideArrow();
+    slideImages() {
+      this.showImages();
     }
   }
 }
@@ -139,10 +141,20 @@ export default {
 }
 
 .textSlide-enter-active, .textSlide-leave-active {
-  transition: transform .28s
+  transition: all .6s ease 0s;
+  transition-delay:.7s;
 }
+
+.textSlide-enter,.textSlide-leave-to {
+  opacity: 0;
+}
+
 .textSlide-enter {
-  transform: translateX(-150px)
+  transform: translateX(-150px);
+}
+
+.textSlide-enter-to {
+  transform: translateX(0);
 }
 
 </style>
