@@ -37,14 +37,13 @@ export default {
       },
       showData: {
         showContactTitle: true,
-        showImage: false,
       },
     }
   },
   mounted() {
     const options = {
       root: null,
-      rootMargin: "0px 0px -5%",
+      rootMargin: "0px 0px -1%",
       threshold: 0
     };
 
@@ -62,7 +61,6 @@ export default {
         this.showData['showContactTitle'] = false;
       } else {
         this.showData['showContactTitle'] = true;
-        this.showData['showImage'] = true;
       }
     },
     onIntersect(target, options = {}) {
@@ -88,7 +86,7 @@ export default {
   font-size: 3.2vw;
   font-style: oblique;
   font-weight: 1000;
-  color: #42AEEF;
+  color: #0092F0;
   margin-right: 7%;
   letter-spacing: 5px;
 }
@@ -110,7 +108,7 @@ export default {
 }
 
 .mailIconStyle {
-  color: #42AEEF;
+  color: #0092F0;
   transform: scale(4.5, 4.5);
   transition-duration: 0.3s;
 }
@@ -118,14 +116,14 @@ export default {
 .mailIconStyle:hover {
   opacity: 0.7;
   color: #fff;
-  background-color: #42AEEF;
+  background-color: #0092F0;
   transition-duration: 0.3s;
 }
 
 
 
 .btnCircle:hover {
-  background: #42AEEF;
+  background: #0092F0;
 }
 .slide-enter-active, .slide-leave-active {
   transition: transform .6s

@@ -7,7 +7,7 @@
         </span>
       </transition>
       <transition name="slide">
-        <img v-show="showData['showAboutTitle']" id="arrow" class="setArrowPos" :src="imageData['arrowImage']">
+        <img v-show="showData['showAboutTitle']" class="setArrowPos" :src="imageData['arrowImage']">
       </transition>
     </div>
     <v-row class="mainBody" align="center" no-gutters>
@@ -20,8 +20,8 @@
         class="ml-3 mr-3"
       >
         <v-img
-          v-show="showData['showImage']"
           :src="imageData['profileImage']"
+          :eager="true"
           width="95%"
           height="95%"
         ></v-img>
@@ -111,7 +111,7 @@ export default {
   font-size: 3.2vw;
   font-style: oblique;
   font-weight: 1000;
-  color: #42AEEF;
+  color: #0092F0;
   margin-right: 7%;
   letter-spacing: 5px;
 }

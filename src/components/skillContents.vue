@@ -22,7 +22,6 @@
         <v-tooltip bottom>
           <template v-slot:activator="{ on, attrs }">
             <div
-              v-show="showData['showImage']"
               class="btnCircle"
               v-bind="attrs"
               v-on="on"
@@ -83,7 +82,6 @@
         <v-tooltip bottom>
           <template v-slot:activator="{ on, attrs }">
             <div
-              v-show="showData['showImage']"
               class="btnCircle"
               v-bind="attrs"
               v-on="on"
@@ -141,7 +139,6 @@
         <v-tooltip bottom>
           <template v-slot:activator="{ on, attrs }">
             <div
-              v-show="showData['showImage']"
               class="btnCircle"
               v-bind="attrs"
               v-on="on"
@@ -201,7 +198,6 @@
         <v-tooltip bottom>
           <template v-slot:activator="{ on, attrs }">
             <div
-              v-show="showData['showImage']"
               class="btnCircle"
               v-bind="attrs"
               v-on="on"
@@ -258,7 +254,6 @@
         <v-tooltip bottom>
           <template v-slot:activator="{ on, attrs }">
             <div
-              v-show="showData['showImage']"
               class="btnCircle"
               v-bind="attrs"
               v-on="on"
@@ -316,7 +311,6 @@
         <v-tooltip bottom>
           <template v-slot:activator="{ on, attrs }">
             <div
-              v-show="showData['showImage']"
               class="btnCircle"
               v-bind="attrs"
               v-on="on"
@@ -390,7 +384,6 @@ export default {
       },
       showData: {
         showSkillTitle: true,
-        showImage: false,
       }
     }
   },
@@ -410,7 +403,6 @@ export default {
         this.showData['showSkillTitle'] = false;
       } else {
         this.showData['showSkillTitle'] = true;
-        this.showData['showImage'] = true;
       }
     },
     onIntersect(target, options = {}) {
@@ -436,7 +428,7 @@ export default {
   font-size: 3.2vw;
   font-style: oblique;
   font-weight: 1000;
-  color: #42AEEF;
+  color: #0092F0;
   margin-right: 7%;
   letter-spacing: 5px;
 }
@@ -463,7 +455,7 @@ export default {
   display: inline-block;
   text-decoration: none;
   background: rgb(0,0,0,0);
-  border: solid 2px #42AEEF;
+  border: solid 2px #0092F0;
   color: #FFF;
   width: 50%;
   line-height: 120px;
@@ -479,7 +471,7 @@ export default {
 }
 
 .btnCircle:hover {
-  background: #42AEEF;
+  background: #0092F0;
 }
 .slide-enter-active, .slide-leave-active {
   transition: transform .6s

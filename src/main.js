@@ -13,7 +13,7 @@ Vue.use(Vuetify)
 Vue.use(VueScrollTo, {
   duration: 700,
   easing: [0, 0, 0.1, 1],
-  offset: 0,
+  offset: -25,
 })
 
 /* eslint-disable no-new */

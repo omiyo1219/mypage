@@ -50,7 +50,7 @@ export default {
   height: 85px;
   font-size: 3.2vw;
   font-weight: 500;
-  color: #42AEEF;
+  color: #0092F0;
   letter-spacing: 10px;
   z-index: 1;
   text-align: center;

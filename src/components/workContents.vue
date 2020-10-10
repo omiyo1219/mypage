@@ -23,7 +23,7 @@
           :src="imageData['workLeftImage']"
         ></v-img>
         <div style="margin-top:5%;">
-          <div style="text-align:center; color:#42AEEF; font-size:1.4em;">
+          <div style="text-align:center; color:#0092F0; font-size:1.4em;">
             － 中規模Webサービス開発 －
           </div><br>
           <div style="width:85%; margin:auto; font-size:1.3em;">
@@ -45,7 +45,7 @@
           :src="imageData['workCenterImage']"
         ></v-img>
         <div style="margin-top:5%;">
-          <div style="text-align:center; color:#42AEEF; font-size:1.4em;">
+          <div style="text-align:center; color:#0092F0; font-size:1.4em;">
             － UIコンポーネント開発 －
           </div><br>
           <div style="width:85%; margin:auto; font-size:1.3em;">
@@ -66,7 +66,7 @@
           :src="imageData['workRightImage']"
         ></v-img>
         <div style="margin-top:5%;">
-          <div style="text-align:center; color:#42AEEF; font-size:1.4em;">
+          <div style="text-align:center; color:#0092F0; font-size:1.4em;">
             － デザイン/アイコン制作 －
           </div><br>
           <div style="width:85%; margin:auto; font-size:1.3em;">
@@ -140,7 +140,7 @@ export default {
   font-size: 3.2vw;
   font-style: oblique;
   font-weight: 1000;
-  color: #42AEEF;
+  color: #0092F0;
   margin-right: 7%;
   letter-spacing: 5px;
 }

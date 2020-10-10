@@ -1,92 +1,95 @@
 <template>
 <v-app class="contents">
-  <dropDownMatrix></dropDownMatrix>  <!--背景エフェクト-->
-  <v-app-bar
-    id="top"
-    fixed
-    color="#42AEEF"
-    dark
-    :elevation="8"
-    style="position:relative; z-index:100;"
-  >
-    <v-row align="center">
-      <v-toolbar-title class="ml-3">PORTFOLIO</v-toolbar-title>
-      <v-spacer></v-spacer>
-      <v-row class="hidden-sm-and-down">
-        <v-col cols="3" sm="2" md="3" lg="3" xl="3">
-          <v-btn class="topMenu" text v-scroll-to="'#about'">
-            <span style="color:#FCF503">A</span>bout
-          </v-btn>
-        </v-col>
-        <v-col cols="3" sm="2" md="3" lg="3" xl="3">
-          <v-btn class="topMenu" text v-scroll-to="'#work'">
-            <span style="color:#FCF503">W</span>ork
-          </v-btn>
-        </v-col>
-        <v-col cols="3" sm="2" md="3" lg="3" xl="3">
-          <v-btn class="topMenu" text v-scroll-to="'#skill'">
-            <span style="color:#FCF503">S</span>kill
-          </v-btn>
-        </v-col>
-        <v-col cols="3" sm="2" md="3" lg="3" xl="3">
-          <v-btn class="topMenu" text v-scroll-to="'#contact'">
-            <span style="color:#FCF503">C</span>ontact
-          </v-btn>
-        </v-col>
-      </v-row>
-    </v-row>
-  </v-app-bar>
-  <v-container fluid>
-    <v-row
-      align="center"
-      justify="center"
-      :style="{height:screenSize['topContentsHeight'] + 'px'}"
+  <firstArrowEffect></firstArrowEffect>
+  <div v-show="showPortfolio">
+    <dropDownMatrix></dropDownMatrix>  <!--背景エフェクト-->
+    <v-app-bar
+      id="top"
+      fixed
+      color="#0092F0"
+      dark
+      :elevation="8"
+      style="position:relative; z-index:100;"
     >
-      <v-col cols="12">
-        <topContents></topContents>
-      </v-col>
-      <transition name="fade">
-        <div v-show="pageScroll['scrollY'] == 0" class="announceScrollMove">
+      <v-row align="center">
+        <v-toolbar-title class="ml-3">PORTFOLIO</v-toolbar-title>
+        <v-spacer></v-spacer>
+        <v-row class="hidden-sm-and-down">
+          <v-col cols="3" sm="2" md="3" lg="3" xl="3">
+            <v-btn class="topMenu" text v-scroll-to="'#about'">
+              <span style="color:#FCF503">A</span>bout
+            </v-btn>
+          </v-col>
+          <v-col cols="3" sm="2" md="3" lg="3" xl="3">
+            <v-btn class="topMenu" text v-scroll-to="'#work'">
+              <span style="color:#FCF503">W</span>ork
+            </v-btn>
+          </v-col>
+          <v-col cols="3" sm="2" md="3" lg="3" xl="3">
+            <v-btn class="topMenu" text v-scroll-to="'#skill'">
+              <span style="color:#FCF503">S</span>kill
+            </v-btn>
+          </v-col>
+          <v-col cols="3" sm="2" md="3" lg="3" xl="3">
+            <v-btn class="topMenu" text v-scroll-to="'#contact'">
+              <span style="color:#FCF503">C</span>ontact
+            </v-btn>
+          </v-col>
+        </v-row>
+      </v-row>
+    </v-app-bar>
+    <v-container fluid>
+      <v-row
+        align="center"
+        justify="center"
+        :style="{height:screenSize['topContentsHeight'] + 'px'}"
+      >
+        <v-col cols="12">
+          <topContents></topContents>
+        </v-col>
+        <transition name="fade">
+          <div v-show="pageScroll['scrollY'] == 0" class="announceScrollMove hidden-sm-and-down">
+            <v-img
+              class="announceScrollHover"
+              v-scroll-to="'#about'"
+              :src="imageData['announceScroll']"
+              width="100"
+              height="150"
+            >
+            </v-img>
+          </div>
+        </transition>
+      </v-row>
+      <transition name="bottomSlide">
+        <div 
+          class="moveTopStyle hidden-sm-and-down"
+          v-show="pageScroll['scrollY'] > 300"
+          @mouseover="hoverImage(true)"
+          @mouseleave="hoverImage(false)"
+          v-scroll-to="'#top'"
+        >
           <v-img
-            class="announceScrollHover"
-            v-scroll-to="'#about'"
-            :src="imageData['announceScroll']"
-            width="100"
-            height="150"
+            :src="imageData['moveTop']"
+            width="120"
+            height="75"
           >
           </v-img>
         </div>
       </transition>
-    </v-row>
-    <transition name="bottomSlide">
-      <div 
-        class="moveTopStyle hidden-sm-and-down"
-        v-show="pageScroll['scrollY'] > 300"
-        @mouseover="hoverImage(true)"
-        @mouseleave="hoverImage(false)"
-        v-scroll-to="'#top'"
-      >
-        <v-img
-          :src="imageData['moveTop']"
-          width="120"
-          height="75"
-        >
-        </v-img>
+      <div style="margin-top:10%">
+        <aboutContents id="about"></aboutContents>
+        <workContents id="work"></workContents>
+        <skillContents id="skill"></skillContents>
+        <contactContents id="contact"></contactContents>
       </div>
-    </transition>
-    <div style="margin-top:10%" v-cloak>
-      <aboutContents id="about"></aboutContents>
-      <workContents id="work"></workContents>
-      <skillContents id="skill"></skillContents>
-      <contactContents id="contact"></contactContents>
-    </div>
-    
-  </v-container>
+    </v-container>
+  </div>
 </v-app>
 </template>
 
 <script>
-import dropDownMatrix from "../components/dropdownMatrix"
+import firstArrowEffect from "../components/effects/firstArrowEffect"
+import dropDownMatrix from "../components/effects/dropdownMatrix"
 import topContents from "../components/topContents"
 import aboutContents from "../components/aboutContents"
 import workContents from "../components/workContents"
@@ -94,8 +97,9 @@ import skillContents from "../components/skillContents"
 import contactContents from "../components/contactContents"
 
 export default {
-  name: 'Home',
+  name: 'home',
   components: {
+    firstArrowEffect,
     dropDownMatrix,
     topContents,
     aboutContents,
@@ -105,6 +109,7 @@ export default {
   },
   data () {
     return {
+      showPortfolio: false,
       imageData: {
         moveTop: require("@/assets/pageTopIcon.svg"),
         announceScroll: require("@/assets/announceScroll.svg"),
@@ -121,14 +126,14 @@ export default {
   mounted() {
     window.addEventListener('resize', this.handleResize);
     window.addEventListener('scroll', this.handleScroll);
-    this.screenSize['topContentsHeight'] = screen.height * 0.87;
+    this.screenSize['topContentsHeight'] = screen.height * 0.7;
   },
-  beforeDestroy: function(){
+  beforeDestroy(){
     window.removeEventListener('resize', this.handleResize);
   },
   methods: {
     handleResize() {
-      this.screenSize['topContentsHeight'] = screen.height * 0.87;
+      this.screenSize['topContentsHeight'] = screen.height * 0.7;
     },
     handleScroll: function () {
       if (this.pageScroll['scTimer']) {
