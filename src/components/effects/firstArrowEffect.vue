@@ -33,9 +33,8 @@
         top: textData['top'],
       }"
     >
-      <span style="color:#FCF503">W</span>elcome
+      <span style="color:#FCF503" @click="$emit('input', true)">W</span>elcome
     </div>
-    
   </div>
 </v-app>
 </template>
@@ -43,6 +42,11 @@
 <script>
 export default {
   name: 'firstArrowEffect',
+  props: {
+    value: {
+      type: Boolean,
+    },
+  },
   data () {
     return {
       imageData: {
@@ -56,10 +60,11 @@ export default {
         whiteArrowCount: 2,
       },
       textData: {
-        show: false,
+        show: true,
         top: null,
       },
       showBlueFlag: false,
+      endEffectsFlag: false,
     }
   },
   watch: {
@@ -73,6 +78,10 @@ export default {
       setTimeout(()=>{
         this.textData['show'] = true;
       },1800);
+
+      setTimeout(()=>{
+        this.$emit('input', false);
+      },5200);
     }
   },
   mounted() {
@@ -125,9 +134,9 @@ export default {
       this.arrowData['whiteArrow'] = whiteArrow;
     },
     setTextData() {
+      this.textData['show'] = false;
       var client_h = document.getElementById('text').clientHeight;
       this.textData['top'] = (window.innerHeight / 2 - client_h / 2) + 'px';
-      console.log(client_h)
     },
     resizeArrowData() {
       var blueArrowSize = window.innerHeight / this.arrowData['blueArrowCount'];
@@ -176,6 +185,7 @@ export default {
 .textStyle {
   position: relative;
   text-align: center;
+  font-style: oblique;
   font-size: 10vh;
   letter-spacing: 5px;
   font-weight: 1000;
@@ -204,7 +214,7 @@ export default {
 }
 @keyframes SlideInText {
   0% {
-    transform: translateX(-50%);
+    transform: translateX(-30%);
   }
   100% {
     transform: translateX(0);

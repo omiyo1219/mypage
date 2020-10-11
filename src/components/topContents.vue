@@ -5,9 +5,7 @@
         HIROTSUGU OK<span style="color:#FCF503">A</span>DA
       </span>
     </transition>
-    <!--<transition name="slide">
-      <img v-show="showData['showArrow']" class="setArrowPos" :src="arrowImage">
-    </transition>--><br>
+    <br>
     <transition name="fade">
       <span v-show="showData['showName']">
         <span class="roleTitle">FRONTEND ENGINEER</span>
@@ -19,27 +17,22 @@
 
 export default {
   name: 'topContents',
+  props: {
+    value: Boolean
+  },
   data () {
     return {
       arrowImage:require("@/assets/fullWidthArrow.svg"),
       showData: {
-        showArrow: false,
-        showName: false
+        showName: false,
       }
     }
   },
-  mounted() {
-    setTimeout(this.slideArrow, 200);
-    setTimeout(this.slideName, 1000);
-  },
-  methods: {
-    slideArrow() {
-      this.showData['showArrow'] = true;
-    },
-    slideName() {
+  watch: {
+    value() {
       this.showData['showName'] = true;
     }
-  }
+  },
 }
 </script>
 
@@ -70,7 +63,7 @@ export default {
 
 .fade-enter-active, .fade-leave-active {
   will-change: opacity;
-  transition: opacity 2000ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: opacity 5000ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
 .fade-enter, .fade-leave-to {
   opacity: 0
