@@ -22,7 +22,7 @@ export default {
   },
   data () {
     return {
-      arrowImage:require("@/assets/fullWidthArrow.svg"),
+      arrowImage:require("@/assets/arrows/fullWidthArrow.svg"),
       showData: {
         showName: false,
       }

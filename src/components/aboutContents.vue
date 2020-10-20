@@ -61,7 +61,7 @@ export default {
   data () {
     return {
       imageData: {
-        arrowImage:require("@/assets/fullWidthArrow.svg"),
+        arrowImage:require("@/assets/arrows/fullWidthArrow.svg"),
         profileImage: require("@/assets/about/myImage.jpg"),
       },
       showData: {

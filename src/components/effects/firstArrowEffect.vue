@@ -50,8 +50,8 @@ export default {
   data () {
     return {
       imageData: {
-        blueArrowImage:require("@/assets/largeArrow.svg"),
-        whiteArrowImage:require("@/assets/largeArrow_white.svg"),
+        blueArrowImage:require("@/assets/arrows/largeArrow.svg"),
+        whiteArrowImage:require("@/assets/arrows/largeArrow_white.svg"),
       },
       arrowData: {
         blueArrow: [],
@@ -135,6 +135,7 @@ export default {
     },
     setTextData() {
       this.textData['show'] = false;
+
       var client_h = document.getElementById('text').clientHeight;
       this.textData['top'] = (window.innerHeight / 2 - client_h / 2) + 'px';
     },
@@ -148,6 +149,10 @@ export default {
 
       var whiteArrowPos = window.innerHeight / 4;
       this.arrowData['whiteArrow'][1]['position'] = whiteArrowPos * 3 + 'px';
+
+      var client_h = document.getElementById('text').clientHeight;
+      console.log(client_h)
+      this.textData['top'] = (window.innerHeight / 2 - client_h / 2) + 'px';
     }
   }
 }

@@ -28,6 +28,7 @@
             >
               <v-img
                 class="img_wrap"
+                :eager="true"
                 :src="imageData['htmlIcon']"
               ></v-img>
             </div>
@@ -43,6 +44,7 @@
             >
               <v-img
                 class="ml-2 mr-2"
+                :eager="true"
                 :src="imageData['htmlHoverImage']"
                 width="90%"
               ></v-img>
@@ -88,6 +90,7 @@
             >
               <v-img
                 class="img_wrap"
+                :eager="true"
                 :src="imageData['javascriptIcon']"
               ></v-img>
             </div>
@@ -103,6 +106,7 @@
             >
               <v-img
                 class="ml-2 mr-2"
+                :eager="true"
                 :src="imageData['javascriptHoverImage']"
                 width="90%"
               ></v-img>
@@ -145,6 +149,7 @@
             >
               <v-img
                 class="img_wrap"
+                :eager="true"
                 :src="imageData['vueIcon']"
               ></v-img>
             </div>
@@ -159,6 +164,7 @@
             >
               <v-img
                 class="ml-2 mr-2"
+                :eager="true"
                 :src="imageData['vueHoverImage']"
                 width="90%"
               ></v-img>
@@ -204,6 +210,7 @@
             >
               <v-img
                 class="img_wrap"
+                :eager="true"
                 :src="imageData['psdIcon']"
               ></v-img>
             </div>
@@ -218,6 +225,7 @@
             >
               <v-img
                 class="ml-2 mr-2"
+                :eager="true"
                 :src="imageData['psdHoverImage']"
                 width="90%"
               ></v-img>
@@ -260,6 +268,7 @@
             >
               <v-img
                 class="img_wrap"
+                :eager="true"
                 :src="imageData['aiIcon']"
               ></v-img>
             </div>
@@ -274,6 +283,7 @@
             >
               <v-img
                 class="ml-2 mr-2"
+                :eager="true"
                 :src="imageData['aiHoverImage']"
                 width="90%"
               ></v-img>
@@ -317,6 +327,7 @@
             >
               <v-img
                 class="img_wrap"
+                :eager="true"
                 :src="imageData['xdIcon']"
               ></v-img>
             </div>
@@ -331,6 +342,7 @@
             >
               <v-img
                 class="ml-2 mr-2"
+                :eager="true"
                 :src="imageData['xdHoverImage']"
                 width="90%"
               ></v-img>
@@ -368,7 +380,7 @@ export default {
   data () {
     return {
       imageData: {
-        arrowImage: require("@/assets/fullWidthArrow.svg"),
+        arrowImage: require("@/assets/arrows/fullWidthArrow.svg"),
         htmlIcon: require("@/assets/skill/html5_icon.svg"),
         javascriptIcon: require("@/assets/skill/javascript_icon.svg"),
         vueIcon: require("@/assets/skill/vue_icon.svg"),

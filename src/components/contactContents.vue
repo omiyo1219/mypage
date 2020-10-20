@@ -1,6 +1,6 @@
 <template>
   <v-app class="contents">
-    <div id="contactObserver">
+    <div id="contactObserver" style="margin-top:2%">
       <transition name="textSlide">
         <span class="skillTitleStyle" v-show="showData['showContactTitle']">
           Contact
@@ -10,35 +10,135 @@
         <img v-show="showData['showContactTitle']" class="setArrowPos" :src="imageData['arrowImage']">
       </transition>
     </div>
-    <v-row class="mainBody" justify="center" align="center" no-gutters>
-      <v-btn
-        @click="openMailer"
-        class="ma-2 mailIconStyle"
-        outlined
-        fab
+    <form action="https://api.staticforms.xyz/submit" method="post">
+      <v-row class="mainBody" no-gutters>
+        <v-col cols="1"></v-col>
+        <v-col class="inputFormTitle" cols="4" align-self="center">
+          お名前
+        </v-col>
+        <v-col cols="6" align-self="center">
+          <v-text-field
+            v-model="name"
+            name="name"
+            :error-messages="nameErrors"
+            :counter="10"
+            label="お名前"
+            required
+            clearable
+            @input="$v.name.$touch()"
+            @blur="$v.name.$touch()"
+          ></v-text-field>
+        </v-col>
+        <v-col cols="1"></v-col>
+
+        <v-col cols="1"></v-col>
+        <v-col class="inputFormTitle" cols="4" align-self="center">
+          メールアドレス
+        </v-col>
+        <v-col cols="6" align-self="center">
+          <v-text-field
+            v-model="email"
+            name="email" 
+            :error-messages="emailErrors"
+            label="E-mail"
+            required
+            clearable
+            @input="$v.email.$touch()"
+            @blur="$v.email.$touch()"
+          ></v-text-field>
+        </v-col>
+        <v-col cols="1"></v-col>
+
+        <v-col cols="1"></v-col>
+        <v-col class="inputFormTitle" cols="4" style="margin-top:4%">
+          お問い合わせ内容
+        </v-col>
+        <v-col cols="6" style="margin-top:4%">
+          <v-textarea
+            outlined
+            name="message"
+            placeholder="入力してください"
+            :error-messages="contentsErrors"
+            v-model="contents"
+            clearable
+            @input="$v.contents.$touch()"
+            @blur="$v.contents.$touch()"
+          ></v-textarea>
+        </v-col>
+        <v-col cols="1"></v-col>
+        <v-row no-gutters justify="center">
+          <v-btn
+            type="submit"
+            value="Submit"
+            depressed
+            rounded
+            dark
+            color="#0092F0"
+            width="15%"
+          >
+            送信
+          </v-btn>
+        </v-row>
+      </v-row>
+      <input
+        type="hidden"
+        name="accessKey"
+        value="15aad842-57a3-4891-9d90-cd942eee4d60"
       >
-        <v-icon
-          large
-        >
-          mdi-email
-        </v-icon>
-      </v-btn>
-    </v-row>
+      <input type="text" name="honeypot" style="display:none">
+      <input type="hidden" name="subject" value="お問い合わせ">
+      <input type="hidden" name="replyTo" value="@">
+      <input type="hidden" name="redirectTo" value="http://localhost:8080/#/success">
+    </form>
   </v-app>
 </template>
 
 <script>
+import { validationMixin } from 'vuelidate'
+import { required, maxLength, email } from 'vuelidate/lib/validators'
+
 export default {
   name: 'contactContents',
+  mixins: [validationMixin],
+  validations: {
+    name: { required, maxLength: maxLength(10) },
+    email: { required, email },
+    contents: { required}
+  },
   data () {
     return {
       imageData: {
-        arrowImage: require("@/assets/fullWidthArrow.svg"),
+        arrowImage: require("@/assets/arrows/fullWidthArrow.svg"),
       },
       showData: {
         showContactTitle: true,
       },
+      name: '',
+      email: '',
+      contents: '',
     }
+  },
+  computed: {
+    nameErrors () {
+      const errors = []
+      if (!this.$v.name.$dirty) return errors
+      !this.$v.name.maxLength && errors.push('10文字以下で入力してください')
+      !this.$v.name.required && errors.push('※この項目は入力必須です')
+      return errors
+    },
+    emailErrors () {
+      const errors = []
+      if (!this.$v.email.$dirty) return errors
+      !this.$v.email.email && errors.push('メールアドレスのフォーマットで入力してください')
+      !this.$v.email.required && errors.push('※この項目は入力必須です')
+      return errors
+    },
+    contentsErrors () {
+      const errors = []
+      if (!this.$v.contents.$dirty) return errors
+      !this.$v.contents.required && errors.push('※この項目は入力必須です')
+      return errors
+    },
   },
   mounted() {
     const options = {
@@ -69,7 +169,10 @@ export default {
     },
     slideImages() {
       this.showImages();
-    }
+    },
+    submitForm(){
+      this.$v.$touch();
+    },
   }
 }
 </script>
@@ -101,6 +204,7 @@ export default {
 
 .mainBody {
   position: relative;
+  margin-top: 8%;
   width: 100%;
   height: 100%;
   color: gray;
@@ -120,7 +224,9 @@ export default {
   transition-duration: 0.3s;
 }
 
-
+.submitStyle:hover {
+  background-color: rgb(132,230,232,0.8);
+}
 
 .btnCircle:hover {
   background: #0092F0;

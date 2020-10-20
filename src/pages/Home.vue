@@ -117,7 +117,6 @@ export default {
     return {
       showFirstEffects: true,
       showPortfolio: false,
-      aa: false,
       imageData: {
         moveTop: require("@/assets/pageTopIcon.svg"),
         announceScroll: require("@/assets/announceScroll.svg"),

@@ -14,55 +14,37 @@
       <v-col
         cols="12"
         sm="12"
-        md="4"
-        lg="4"
-        xl="4"
+        md="6"
+        lg="6"
+        xl="6"
       >
         <v-img
           class="imageRotate mt-4"
-          :src="imageData['workLeftImage']"
-        ></v-img>
-        <div style="margin-top:5%;">
-          <div style="text-align:center; color:#0092F0; font-size:1.4em;">
-            － 中規模Webサービス開発 －
-          </div><br>
-          <div style="width:85%; margin:auto; font-size:1.3em;">
-            業務管理システムの主にフロント実装。Vue.jsにて開発。
-            UIフレームワークはBootstrapVueを使用。<br>
-            主にhtml/cssのコーディングを担当。
-          </div>
-        </div>
-      </v-col>
-      <v-col
-        cols="12"
-        sm="12"
-        md="4"
-        lg="4"
-        xl="4"
-      >
-        <v-img
-          class="imageRotate mt-4"
+          :eager="true"
           :src="imageData['workCenterImage']"
         ></v-img>
         <div style="margin-top:5%;">
           <div style="text-align:center; color:#0092F0; font-size:1.4em;">
-            － UIコンポーネント開発 －
+            － 中規模Web開発 / UIコンポーネント開発 －
           </div><br>
           <div style="width:85%; margin:auto; font-size:1.3em;">
-            UIのデザイン、およびUIコンポーネントを開発。
-            ボタンやダイアログ、カレンダーの作成。
+            業務管理システムの主にフロント実装。Vue.jsにて開発。
+            UIフレームワークはBootstrapVueを使用。<br>
+            主にhtml/cssのコーディングを担当。<br>
+            また、UIのデザイン、およびUIコンポーネントの開発。
           </div>
         </div>
       </v-col>
       <v-col
         cols="12"
         sm="12"
-        md="4"
-        lg="4"
-        xl="4"
+        md="6"
+        lg="6"
+        xl="6"
       >
         <v-img
           class="imageRotate mt-4"
+          :eager="true"
           :src="imageData['workRightImage']"
         ></v-img>
         <div style="margin-top:5%;">
@@ -90,8 +72,7 @@ export default {
   data () {
     return {
       imageData: {
-        arrowImage:require("@/assets/fullWidthArrow.svg"),
-        workLeftImage: require("@/assets/work/develop_Aplications.png"),
+        arrowImage:require("@/assets/arrows/fullWidthArrow.svg"),
         workCenterImage: require("@/assets/work/develop_components.png"),
         workRightImage: require("@/assets/work/ai_icon.png"),
       },
