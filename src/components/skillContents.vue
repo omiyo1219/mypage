@@ -66,7 +66,6 @@
               <div style="min-width:150px; font-size:1.1vw;">
                 基本のHTML/CSSは元より、
                 HTML5から追加されたcanvasの使用経験有り。
-                <br>
                 canvasではpainter機能や3Dオブジェクトの表示も可能。
               </div>
             </v-col>
