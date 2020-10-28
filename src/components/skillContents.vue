@@ -63,7 +63,7 @@
               lg="6"
               xl="6"
             >
-              <div style="min-width:120px; font-size:2vw;">
+              <div style="min-width:120px; font-size:2vh;">
                 基本のHTML/CSSは元より、
                 HTML5から追加されたcanvasの使用経験有り。
                 <br>
@@ -125,7 +125,7 @@
               lg="6"
               xl="6"
             >
-              <div style="min-width:120px; font-size:2vw;">
+              <div style="min-width:120px; font-size:2vh;">
                 Javascript使用歴は9ヶ月程度であるが、複雑なアニメーションやカレンダーのアルゴリズムも実装経験有。
               </div>
             </v-col>
@@ -183,7 +183,7 @@
               lg="6"
               xl="6"
             >
-              <div style="min-width:120px; font-size:2vw;">
+              <div style="min-width:120px; font-size:2vh;">
                 Vue.jsを用い、UIコンポーネントのデザイン/制作をメインとしての開発経験有り。<br>
                 本PortfolioもVue.jsによって制作。
               </div>
@@ -244,7 +244,7 @@
               lg="6"
               xl="6"
             >
-              <div style="min-width:120px; font-size:2vw;">
+              <div style="min-width:120px; font-size:2vh;">
                 Photoshopを用いて、簡単な画像トリミングや現実の写真をアニメ塗りに調整などの経験あり。
               </div>
             </v-col>
@@ -302,7 +302,7 @@
               lg="6"
               xl="6"
             >
-              <div style="min-width:120px; font-size:2vw;">
+              <div style="min-width:120px; font-size:2vh;">
                 illustratorを用いて、UIアイコンやロゴ制作の経験あり。<br>
                 本Webサイトで使用されている素材もillustratorによって作成。
               </div>
@@ -361,7 +361,7 @@
               lg="6"
               xl="6"
             >
-              <div style="min-width:120px; font-size:2vw;">
+              <div style="min-width:120px; font-size:2vh;">
                 XDを用いて、Webデザインやプロトタイプの使用によりUIの挙動やWebサイトの遷移の作成。<br>
                 会議などで積極的に使用することでクライアントのコンセンサスも円滑に得ることが可能。
               </div>
