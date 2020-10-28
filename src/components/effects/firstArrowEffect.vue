@@ -82,9 +82,9 @@ export default {
         this.textData['show'] = true;
       },1800);
 
-      setTimeout(()=>{
+      /*setTimeout(()=>{
         this.$emit('input', false);
-      },5200);
+      },5200);*/
     }
   },
   mounted() {
