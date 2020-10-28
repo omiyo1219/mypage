@@ -1,6 +1,9 @@
 <template>
 <v-app>
   <div class="backGround">
+    <div class="skipTextStyle" @click="$emit('input', false);">
+      Skip
+    </div>
     <div v-for="item in arrowData['blueArrow']">
       <transition name="slide" >
         <img
@@ -151,7 +154,6 @@ export default {
       this.arrowData['whiteArrow'][1]['position'] = whiteArrowPos * 3 + 'px';
 
       var client_h = document.getElementById('text').clientHeight;
-      console.log(client_h)
       this.textData['top'] = (window.innerHeight / 2 - client_h / 2) + 'px';
     }
   }
@@ -199,6 +201,22 @@ export default {
   animation: SlideInText 1.8s;
   animation-duration: 5s;
   animation-timing-function: cubic-bezier(.02,.51,0,1);
+}
+
+.skipTextStyle {
+  position: absolute;
+  cursor: pointer;
+  margin-right: 1%;
+  right: 0;
+  bottom: 0;
+  z-index: 5;
+  font-size: 5vh;
+  font-style: oblique;
+  color: #fff;
+}
+
+.skipTextStyle:hover {
+  color: #FCF503;
 }
 
 @keyframes SlideInTop {

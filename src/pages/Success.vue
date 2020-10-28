@@ -4,20 +4,11 @@
         <v-row align="center" justify="center" class="successText">
           <div>
             Thank you for <span style="color:#FCF503">y</span>our E-mail !!<br>
-            <v-row class="mt-3" style="text-align:left; font-size:1.2vw">
-              <v-col cols="10">
-                <svg width="100%" height="100">
-                  <path d="M50 0 L100 25 L0 25 L0 80 L0 0 L0 20 L50 20 Z" style="fill:#F00"/>
-                </svg>
-                <!--
-                <img
-                  :src="arrowImage"
-                  width="100%"
-                  height="15px"
-                  style="text-align:left"
-                ></img>-->
+            <v-row align="center" no-gutters>
+              <v-col cols="11">
+                <div style="width:100%; height:15px; background-color:#fff"></div>
               </v-col>
-              <v-col cols="2">
+              <v-col cols="1" class="pl-1" style="font-size:1.2vw">
                 redirect
               </v-col>
             </v-row>
@@ -38,9 +29,6 @@ export default {
         page: false
       }
     }
-  },
-  computed: {
-
   },
   mounted() {
     this.showData['page'] = true
