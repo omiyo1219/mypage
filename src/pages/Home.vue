@@ -132,9 +132,9 @@ export default {
   },
   watch: {
     showFirstEffects() {
-      /*setTimeout(() => {
+      setTimeout(() => {
         this.showPortfolio = true
-      },1000)*/
+      },1000)
     }
   },
   mounted() {
