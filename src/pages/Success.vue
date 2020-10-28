@@ -3,7 +3,13 @@
     <v-app v-show="showData['page']" class="contents" style="background-color: #0092F0;">
         <v-row align="center" justify="center" class="successText">
           <v-row no-gutters>
-            <v-col cols="12">
+            <v-col
+              cols="12"
+              sm="12"
+              md="12"
+              lg="12"
+              xl="12"
+            >
               Thank you for <span style="color:#FCF503">y</span>our E-mail !!
             </v-col>
             <v-col cols="9">

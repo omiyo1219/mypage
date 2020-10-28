@@ -88,7 +88,7 @@
       <input type="text" name="honeypot" style="display:none">
       <input type="hidden" name="subject" value="お問い合わせ">
       <input type="hidden" name="replyTo" value="@">
-      <input type="hidden" name="redirectTo" value="https://k-mochio.github.io/mypage/#/success">
+      <input type="hidden" name="redirectTo" value="https://omiyo1219.github.io/mypage/#/success">
     </form>
   </v-app>
 </template>
