@@ -11,13 +11,13 @@
       <v-app-bar
         id="top"
         fixed
-        color="#0092F0"
+        color="#b04df2"
         dark
         :elevation="8"
         style="position:relative; z-index:100;"
       >
         <v-row align="center">
-          <v-toolbar-title class="ml-3">PORTFOLIO</v-toolbar-title>
+          <v-toolbar-title class="ml-3" style="font-style: oblique; font-weight: 1000;">PSY.MEL</v-toolbar-title>
           <v-spacer></v-spacer>
           <v-row class="hidden-sm-and-down">
             <v-col cols="3" sm="2" md="3" lg="3" xl="3">

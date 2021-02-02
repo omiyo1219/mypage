@@ -111,7 +111,7 @@ export default {
   font-size: 3.2vw;
   font-style: oblique;
   font-weight: 1000;
-  color: #0092F0;
+  color: #b04df2;
   margin-right: 7%;
   letter-spacing: 5px;
 }

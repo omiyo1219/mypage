@@ -1,6 +1,6 @@
 <template>
   <transition name="fade">
-    <v-app v-show="showData['page']" class="contents" style="background-color: #0092F0;">
+    <v-app v-show="showData['page']" class="contents" style="background-color: #b04df2;">
         <v-row align="center" justify="center" class="successText">
           <v-row no-gutters>
             <v-col

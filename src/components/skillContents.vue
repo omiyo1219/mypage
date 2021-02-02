@@ -440,7 +440,7 @@ export default {
   font-size: 3.2vw;
   font-style: oblique;
   font-weight: 1000;
-  color: #0092F0;
+  color: #b04df2;
   margin-right: 7%;
   letter-spacing: 5px;
 }
@@ -467,7 +467,7 @@ export default {
   display: inline-block;
   text-decoration: none;
   background: rgb(0,0,0,0);
-  border: solid 2px #0092F0;
+  border: solid 2px #b04df2;
   color: #FFF;
   width: 50%;
   line-height: 120px;
@@ -483,7 +483,7 @@ export default {
 }
 
 .btnCircle:hover {
-  background: #0092F0;
+  background: #b04df2;
 }
 .slide-enter-active, .slide-leave-active {
   transition: transform .6s

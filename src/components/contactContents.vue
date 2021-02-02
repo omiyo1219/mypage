@@ -73,7 +73,7 @@
             depressed
             rounded
             dark
-            color="#0092F0"
+            color="#b04df2"
             width="15%"
           >
             送信
@@ -189,7 +189,7 @@ export default {
   font-size: 3.2vw;
   font-style: oblique;
   font-weight: 1000;
-  color: #0092F0;
+  color: #b04df2;
   margin-right: 7%;
   letter-spacing: 5px;
 }
@@ -212,7 +212,7 @@ export default {
 }
 
 .mailIconStyle {
-  color: #0092F0;
+  color: #b04df2;
   transform: scale(4.5, 4.5);
   transition-duration: 0.3s;
 }
@@ -220,7 +220,7 @@ export default {
 .mailIconStyle:hover {
   opacity: 0.7;
   color: #fff;
-  background-color: #0092F0;
+  background-color: #b04df2;
   transition-duration: 0.3s;
 }
 
@@ -229,7 +229,7 @@ export default {
 }
 
 .btnCircle:hover {
-  background: #0092F0;
+  background: #b04df2;
 }
 .slide-enter-active, .slide-leave-active {
   transition: transform .6s
