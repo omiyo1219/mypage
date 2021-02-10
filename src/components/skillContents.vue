@@ -126,7 +126,7 @@
               xl="6"
             >
               <div style="min-width:120px; font-size:2vh;">
-                Javascript使用歴は9ヶ月程度であるが、複雑なアニメーションやカレンダーのアルゴリズムも実装経験有。
+                Javascriptを用いて、複雑なアニメーションやカレンダーのアルゴリズムも実装経験有。
               </div>
             </v-col>
           </v-row>

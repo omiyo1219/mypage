@@ -151,11 +151,6 @@ export default {
     this.onIntersect(target, options);
   },
   methods: {
-    openMailer() {
-      var mail = "m.kyogetsu@gmail.com"
-      var title = "お問い合わせ"
-      window.open("https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&to=m.kyogetsu@gmail.com&su=お問い合わせ")
-    },
     showImages() {
       if(this.showData['showContactTitle']) {
         this.showData['showContactTitle'] = false;
